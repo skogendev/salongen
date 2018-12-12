@@ -13,3 +13,6 @@ templates/_layout | All layouts
 
 ## Gulp
 Run `gulp watch` in dev mode. Before production deployment run `gulp --prod`.
+
+## Techniques used
+[Asset versioning by Studio107](https://nystudio107.com/blog/simple-static-asset-versioning)
