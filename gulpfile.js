@@ -22,7 +22,7 @@ var browserSync = require('browser-sync').create(),
     tailwindcss = require('tailwindcss'),
     watch = require('gulp-watch');
 
-/* Building dist files from source files */
+/* Building files */
 gulp.task('default', function () {
   gulp.src(pkg.paths.src.css +  'styles.css')
     .pipe(errorHandler())
