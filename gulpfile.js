@@ -22,12 +22,6 @@ var browserSync = require('browser-sync').create(),
     tailwindcss = require('tailwindcss'),
     watch = require('gulp-watch');
 
-/* File paths */
-var siteUrl = 'http://starter.localhost/',
-    pathCraftConfig = 'config/'
-    src = 'src/',
-    dest = 'web/assets/';
-
 /* Building dist files from source files */
 gulp.task('default', function () {
   gulp.src(pkg.paths.src.css +  'styles.css')
@@ -54,7 +48,7 @@ gulp.task('php', function() {
 /* Setting up browserSync */
 gulp.task('browser-sync', ['php'], function(){
   browserSync.init({
-    proxy: siteUrl,
+    proxy: pkg.paths.siteUrl.dev,
     port: 8080,
     open: true,
     notify: false
