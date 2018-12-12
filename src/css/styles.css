@@ -1,0 +1,14 @@
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: tomato;
+}
+
+.fuck {
+  display: none;
+}
+
+.ding {
+  display: block;
+}

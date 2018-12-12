@@ -1,0 +1,88 @@
+dateModified: 1544002304
+email:
+  fromEmail: hei@skogen.io
+  fromName: 'Skogen Starter'
+  transportType: craft\mail\transportadapters\Sendmail
+fieldGroups:
+  8b1e5ddf-e4ff-4c49-b2d4-9a71581da0c3:
+    name: Common
+fields:
+  7622acf1-9e0f-4980-bb72-3fbba04106a4:
+    contentColumnType: string
+    fieldGroup: 8b1e5ddf-e4ff-4c49-b2d4-9a71581da0c3
+    handle: test
+    instructions: 'Jacob gillar denne siden'
+    name: 'Bitch fuck'
+    searchable: true
+    settings:
+      contentTable: '{{%matrixcontent_test}}'
+      localizeBlocks: false
+      maxBlocks: ''
+      minBlocks: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Matrix
+matrixBlockTypes:
+  f1de7f49-a2c5-492b-a355-833ef219ae2b:
+    field: 7622acf1-9e0f-4980-bb72-3fbba04106a4
+    fieldLayouts:
+      c26bc617-5f09-4600-a228-4b28e591cd13:
+        tabs:
+          -
+            fields:
+              62a9a807-9d50-4c50-a743-28abc61d7209:
+                required: false
+                sortOrder: 1
+            name: Content
+            sortOrder: 1
+    fields:
+      62a9a807-9d50-4c50-a743-28abc61d7209:
+        contentColumnType: text
+        fieldGroup: null
+        handle: fuck
+        instructions: ''
+        name: 'Fuck :-)'
+        searchable: true
+        settings:
+          charLimit: ''
+          code: ''
+          columnType: text
+          initialRows: '4'
+          multiline: ''
+          placeholder: ''
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\fields\PlainText
+    handle: fuck
+    name: FUCK
+    sortOrder: 1
+plugins:
+  async-queue:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+siteGroups:
+  5f1ee68b-00af-4407-b9ec-87eb5939e24d:
+    name: 'Skogen Starter'
+sites:
+  fa18f867-6576-4940-b424-58bf5da0035d:
+    baseUrl: '@web'
+    handle: default
+    hasUrls: true
+    language: en-US
+    name: 'Skogen Starter'
+    primary: true
+    siteGroup: 5f1ee68b-00af-4407-b9ec-87eb5939e24d
+    sortOrder: 1
+system:
+  edition: solo
+  live: true
+  name: 'Skogen Starter'
+  schemaVersion: 3.1.9
+  timeZone: America/Los_Angeles
+user:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: ''
+  photoVolumeUid: null
+  requireEmailVerification: true

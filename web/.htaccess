@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+
+    RewriteEngine On
+
+    # Cache busting
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)\.[0-9]{10}\.(css|js)$ $1.$2 [L]
+
+    # Send would-be 404 requests to Craft
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} !^/(favicon\.ico|apple-touch-icon.*\.png)$ [NC]
+    RewriteRule (.+) index.php?p=$1 [QSA,L]
+
+</IfModule>
