@@ -1,14 +1,9 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg-color: pink;
+}
 body {
-  background: tomato;
-}
-
-.fuck {
-  display: none;
-}
-
-.ding {
-  display: block;
+  background: var(--bg-color);
 }

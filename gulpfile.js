@@ -7,68 +7,96 @@ A quick note regarding environments:
 
 */
 
-var browserSync = require('browser-sync').create(),
+var browsersync = require('browser-sync').create(),
     errorHandler = require('gulp-error-handle'),
     gulp = require('gulp'),
     mode = require('gulp-mode')({
       modes: ['prod','dev'],
       default: 'dev'
     }),
-    php = require('gulp-connect-php'),
     pkg = require('./package.json'),
     replace = require('gulp-replace'),
     purgecss = require('gulp-purgecss'),
     postcss = require('gulp-postcss'),
     tailwindcss = require('tailwindcss'),
-    watch = require('gulp-watch');
+    watch = require('gulp-watch'),
+    webpack = require("webpack"),
+    webpackconfig = require("./webpack.config.js"),
+    webpackstream = require("webpack-stream");
 
-/* Building files */
-gulp.task('default', function () {
-  gulp.src(pkg.paths.src.css +  'styles.css')
-    .pipe(errorHandler())
-    .pipe(postcss([
-      tailwindcss('tailwind.js'),
-      require('autoprefixer'),
-    ]))
-    .pipe((mode.prod(purgecss({
-        content: [pkg.paths.templates + '**/*.*']
-      })
-    )))
-    .pipe(gulp.dest(pkg.paths.dest.css));
-  if (mode.prod()) {
-    gulp.start('asset-bust')
-  }
-});
 
-/* Creating PHP server for browserSync */
-gulp.task('php', function() {
-  php.server({ base: 'build', port: 8010, keepalive: true});
-});
 
-/* Setting up browserSync */
-gulp.task('browser-sync', ['php'], function(){
-  browserSync.init({
+/* Browsersync */
+function browserSync(done) {
+  browsersync.init({
     proxy: pkg.paths.siteUrl.dev,
     port: 8080,
     open: true,
     notify: false
   });
-});
+  done();
+}
+
+function browserSyncReload(done) {
+  browsersync.reload();
+  done();
+}
+
+
+/* Building files */
+function css(done) {
+  gulp
+    .src(pkg.paths.src.css + 'styles.css')
+    .pipe(errorHandler())
+    .pipe(postcss([
+      tailwindcss('tailwind.js'),
+      require('autoprefixer')
+    ]))
+    .pipe((mode.prod(purgecss({
+        content: [pkg.paths.templates + '**/*.*']
+      })
+    )))
+    .pipe(gulp.dest(pkg.paths.dest.css))
+  if (mode.prod()) {
+    assetBust();
+  }
+  browserSyncReload(done);
+  done();
+}
+
+function js(done) {
+
+  gulp
+    .src([pkg.paths.src.js + "/**/*"])
+    .pipe(errorHandler())
+    .pipe(webpackstream(webpackconfig, webpack))
+    .pipe(gulp.dest(pkg.paths.dest.js));
+
+  browserSyncReload(done);
+  done();
+}
+
 
 /* Static assets versioning */
-gulp.task('asset-bust', function(){
+function assetBust(){
   gulp.src(pkg.paths.craft.config + '/general.php')
   .pipe(replace(/'staticAssetsVersion' => (\d+),/g, function(match, p1, offset, string) {
     p1++;
     return "'staticAssetsVersion' => " + p1 + ",";
   }))
   .pipe(gulp.dest(pkg.paths.craft.config));
-});
+}
+
+/* Watch */
+function watchFiles(done) {
+  gulp.watch(pkg.paths.src.css + '**/*', css);
+  done();
+}
+
+/* Tasks */
+gulp.task("css", css);
+gulp.task("js", js);
 
 /* The task. Run gulp watch from CLI */
-gulp.task('watch', ['browser-sync'], function(){
-  watch(pkg.paths.src.base+'/**/*',function(){
-      gulp.start('default');
-      browserSync.reload();
-  });
-});
+gulp.task('dev', gulp.parallel(watchFiles, browserSync));
+gulp.task('build', gulp.parallel(css));

@@ -1,0 +1,7 @@
+.env
+craft
+craft.bat
+modules
+node_modules
+storage
+vendor

@@ -5622,16 +5622,12 @@
   z-index: auto;
 }
 
+:root {
+  --bg-color: pink;
+}
+
 body {
-  background: tomato;
-}
-
-.fuck {
-  display: none;
-}
-
-.ding {
-  display: block;
+  background: var(--bg-color);
 }
 
 @media (min-width: 576px) {
