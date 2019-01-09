@@ -3,8 +3,13 @@
 1) `mkdir project-folder`
 2) cd in to folder and `composer create-project craftcms/craft .`
 3) `git init`
-4) `git clone https://github.com/skogendev/starter-magnus`
-5) `git remote add origin https://github.com/skogendev/project-name.git`
+5) `git remote add origin https://github.com/skogendev/starter-magnus`
+6) 'git fetch --all'
+7) 'git reset --hard origin/master'
+8) 'git pull origin master'
+9) 'git remote rm origin'
+10) `git remote add origin https://github.com/skogendev/project-name`
+11) 'npm install'
 
 ## File structure
 File/folder|Description
