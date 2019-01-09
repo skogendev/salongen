@@ -18,6 +18,9 @@ var browsersync = require('browser-sync').create(),
     replace = require('gulp-replace'),
     purgecss = require('gulp-purgecss'),
     postcss = require('gulp-postcss'),
+    postcssfor = require('postcss-for'),
+    postcssimport = require('postcss-easy-import'),
+    postcssNesting = require('postcss-nested'),
     tailwindcss = require('tailwindcss'),
     watch = require('gulp-watch'),
     webpack = require("webpack"),
@@ -45,11 +48,15 @@ function browserSyncReload(done) {
 
 /* Building files */
 function css(done) {
+
   gulp
     .src(pkg.paths.src.css + 'styles.css')
     .pipe(errorHandler())
     .pipe(postcss([
+      postcssimport(),
+      postcssfor(),
       tailwindcss('tailwind.js'),
+      postcssNesting(),
       require('autoprefixer')
     ]))
     .pipe((mode.prod(purgecss({
@@ -71,20 +78,20 @@ function js(done) {
     .pipe(errorHandler())
     .pipe(webpackstream(webpackconfig, webpack))
     .pipe(gulp.dest(pkg.paths.dest.js));
-
   browserSyncReload(done);
   done();
 }
 
 
 /* Static assets versioning */
-function assetBust(){
+function assetBust(done){
   gulp.src(pkg.paths.craft.config + '/general.php')
   .pipe(replace(/'staticAssetsVersion' => (\d+),/g, function(match, p1, offset, string) {
     p1++;
     return "'staticAssetsVersion' => " + p1 + ",";
   }))
   .pipe(gulp.dest(pkg.paths.craft.config));
+  done();
 }
 
 /* Watch */
@@ -99,4 +106,4 @@ gulp.task("js", js);
 
 /* The task. Run gulp watch from CLI */
 gulp.task('dev', gulp.parallel(watchFiles, browserSync));
-gulp.task('build', gulp.parallel(css));
+gulp.task('build', gulp.parallel(css, assetBust));

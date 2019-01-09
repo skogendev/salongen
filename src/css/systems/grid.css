@@ -1,0 +1,67 @@
+[class*="u-flexgrid"] {
+  @apply .flex .flex-wrap;
+  & > [class*="col-"] {
+    @apply .flex-1;
+
+    & > [class*="u-flexgrid"]:not([class*="col"]) {
+      @apply .w-full .m-0;
+    }
+    &[class*="u-flexgrid"] {
+      @apply .m-0 .p-0;
+    }
+
+  }
+}
+
+.u-flexgrid-g,
+.u-flexgrid-gx {
+  margin-left: -(var(--flexgrid-gx-mobile)/2);
+  margin-right: -(var(--flexgrid-gx-mobile)/2);
+  & > [class*="col-"] {
+    padding-left: var(--flexgrid-gx-mobile)/2;
+    padding-right: var(--flexgrid-gx-mobile)/2;
+  }
+  @screen md {
+    margin-left: calc(- var(--flexgrid-gx-desktop)/2);
+    margin-right: calc(- var(--flexgrid-gx-desktop)/2);
+    & > [class*="col-"] {
+      padding-left: calc(var(--flexgrid-gx-desktop)/2);
+      padding-right: calc(var(--flexgrid-gx-desktop)/2);
+    }
+  }
+}
+
+.u-flexgrid-g,
+.u-flexgrid-gy {
+  & > [class*="col-"] { padding-bottom: var(--flexgrid-gy-mobile) }
+  @screen md {
+    & > [class*="col-"] { padding-bottom: var(--flexgrid-gy-desktop) }
+  }
+}
+
+
+
+@responsive {
+  .u-flexgrid,
+  .u-flexgrid-g,
+  .u-flexgrid-gx,
+  .u-flexgrid-gy {
+    @for $i from 1 to 11 {
+      & > .col-$i {
+        flex-basis: calc((100%/12) * $i);
+        max-width: calc((100%/12) * $i);
+      }
+    }
+
+    & > .col-auto {
+      max-width: none;
+      flex: 1 1;
+      flex-basis: auto;
+    }
+
+    @for $i from 1 to 11 {
+      & > .col-off-$i { margin-left: calc((100%/12) * $i); }
+    }
+
+  }
+}

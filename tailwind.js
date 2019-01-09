@@ -208,6 +208,7 @@ module.exports = {
       'sans-serif',
     ],
     'serif': [
+      'Beirut Display',
       'Constantia',
       'Lucida Bright',
       'Lucidabright',

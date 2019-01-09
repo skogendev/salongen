@@ -1,9 +1,63 @@
+@import 'components';
+@import 'sections';
+@import 'systems';
+
+@tailwind preflight;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --bg-color: pink;
+
+  /* BASE */
+  --bg-color: #111509;
+  --color: #fff;
+
+  /* TYPOGRAPHY */
+  --font-family: Founders Grotesk;
+
+  /* GRID */
+  --gutter: 2rem;
+  --mobile: .5;
+  --desktop: 1.5;
+  --gutter-break: lg;
+
+  --gutter-x: calc(var(--gutter)*.5);
+  --gutter-y: var(--gutter);
+  --flexgrid-gx: calc(var(--gutter)*.5);
+  --flexgrid-gy: calc(var(--gutter)*.5);
+
+  --gutter-x-mobile: calc(var(--gutter-x) * var(--mobile));
+  --gutter-y-mobile: calc(var(--gutter-y) * var(--mobile));
+  --flexgrid-gx-mobile: calc(var(--flexgrid-gx) * var(--mobile));
+  --flexgrid-gy-mobile: calc(var(--flexgrid-gy) * var(--mobile));
+
+  --gutter-x-desktop: calc(var(--gutter-x) * var(--desktop));
+  --gutter-y-desktop: calc(var(--gutter-y) * var(--desktop));
+  --flexgrid-gx-desktop: calc(var(--flexgrid-gx) * var(--desktop));
+  --flexgrid-gy-desktop: calc(var(--flexgrid-gy) * var(--desktop));
+
 }
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
   background: var(--bg-color);
+  color: var(--color);
+  font-family: var(--font-family);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 100;
+}
+
+
+img {
+  width: 100%;
+  height: auto;
 }

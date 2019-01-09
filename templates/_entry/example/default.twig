@@ -1,0 +1,10 @@
+{% extends "_entry/default" %}
+{% block content %}
+
+  <!-- Example Matrix -->
+  {% if entry.matrixContent %}
+    {% set content = entry.matrixContent.all( )%}
+		{% include "_matrix" with { matrix : content } %}
+	{% endif %}
+  
+{% endblock %}

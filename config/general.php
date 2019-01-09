@@ -30,7 +30,7 @@ return [
 
         // Static asset versioning. This number is set by gulp.
         'environmentVariables' => array(
-            'staticAssetsVersion' => 17,
+            'staticAssetsVersion' => 18,
         ),
 
     ],
