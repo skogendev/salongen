@@ -6,10 +6,10 @@
 5) `git remote add origin https://github.com/skogendev/starter-magnus`
 6) `git fetch --all`
 7) `git reset --hard origin/master`
-8) `git pull origin master`
-9) `git remote rm origin`
-10) `git remote add origin https://github.com/skogendev/project-name`
-11) `npm install`
+8) `git remote rm origin`
+9) `git remote add origin https://github.com/skogendev/project-name`
+10) `npm install`
+11) Rediger `siteUrl` i `package.json`
 
 ## File structure
 File/folder|Description
