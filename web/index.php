@@ -1,21 +1,34 @@
+<html data-scroll>
+<?php include('inc/head.php') ?>
+<body data-barba="wrapper">
+
 <?php
-/**
- * Craft web bootstrap file
- */
+  $activePage = 'moterom';
+  include('inc/header.php')
+?>
 
-// Set path constants
-define('CRAFT_BASE_PATH', dirname(__DIR__));
-define('CRAFT_VENDOR_PATH', CRAFT_BASE_PATH.'/vendor');
+<div class="main-content" data-barba="container" data-barba-namespace="home">
 
-// Load Composer's autoloader
-require_once CRAFT_VENDOR_PATH.'/autoload.php';
 
-// Load dotenv?
-if (file_exists(CRAFT_BASE_PATH.'/.env')) {
-    (new Dotenv\Dotenv(CRAFT_BASE_PATH))->load();
-}
+  <?php include('components/home-intro.php') ?>
 
-// Load and run Craft
-define('CRAFT_ENVIRONMENT', getenv('ENVIRONMENT') ?: 'production');
-$app = require CRAFT_VENDOR_PATH.'/craftcms/cms/bootstrap/web.php';
-$app->run();
+  <?php include('components/split-intro-text-with-image.php') ?>
+
+  <?php include('components/images.php') ?>
+
+  <?php include('components/split-articles.php') ?>
+
+  <?php include('components/testimonials.php') ?>
+
+  <?php include('components/meeting-rooms.php') ?>
+
+  <?php include('components/meeting-rooms-intro.php') ?>
+
+  <?php include('components/meeting-rooms-specs.php') ?>
+
+</div>
+
+<?php include('inc/footer.php') ?>
+
+</body>
+</html>

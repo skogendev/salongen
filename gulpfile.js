@@ -97,6 +97,7 @@ function assetBust(done){
 /* Watch */
 function watchFiles(done) {
   gulp.watch(pkg.paths.src.css + '**/*', css);
+  gulp.watch(pkg.paths.src.js + '**/*', js);
   done();
 }
 

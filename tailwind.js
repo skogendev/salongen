@@ -24,7 +24,7 @@ View the full documentation at https://tailwindcss.com.
 |
 */
 
-let defaultConfig = require('tailwindcss/defaultConfig')()
+let defaultConfig = require('tailwindcss/defaultConfig')
 
 
 /*
@@ -45,7 +45,9 @@ let defaultConfig = require('tailwindcss/defaultConfig')()
 
 let colors = {
   'transparent': 'transparent',
+  'current': 'currentColor',
 
+  'black-black': '#000',
   'black': '#22292f',
   'grey-darkest': '#3d4852',
   'grey-darker': '#606f7b',
@@ -53,40 +55,61 @@ let colors = {
   'grey': '#b8c2cc',
   'grey-light': '#dae1e7',
   'grey-lighter': '#f1f5f8',
-  'grey-lightest': '#f8fafc',
-  'white': '#ffffff',
+  'grey-lightest': '#f8fafc', // '#e5e5e5',
+  'white': '#fff',
+  'white-dark': 'color(config(colors.white) lightness(-20%))',
+  'white-darker': 'color(config(colors.white) lightness(-40%))',
 
-  'red-darkest': '#3b0d0c',
+  /*'red-darkest': '#3b0d0c',
   'red-darker': '#621b18',
   'red-dark': '#cc1f1a',
   'red': '#e3342f',
   'red-light': '#ef5753',
   'red-lighter': '#f9acaa',
-  'red-lightest': '#fcebea',
+  'red-lightest': '#fcebea',*/
 
-  'orange-darkest': '#462a16',
+  'red': '#CA575C',
+  'red-lighter': 'color(config(colors.red) lightness(+40%))',
+  'red-light': 'color(config(colors.red) lightness(+20%))',
+  'red-dark': 'color(config(colors.red) lightness(-20%))',
+  'red-darker': 'color(config(colors.red) lightness(-40%))',
+
+  /*'orange-darkest': '#462a16',
   'orange-darker': '#613b1f',
   'orange-dark': '#de751f',
   'orange': '#f6993f',
   'orange-light': '#faad63',
   'orange-lighter': '#fcd9b6',
-  'orange-lightest': '#fff5eb',
+  'orange-lightest': '#fff5eb',*/
+
+  'orange': '#FCAF17',
+  'orange-lighter': 'color(config(colors.orange) lightness(+40%))',
+  'orange-light': 'color(config(colors.orange) lightness(+20%))',
+  'orange-dark': 'color(config(colors.orange) lightness(-20%))',
+  'orange-darker': 'color(config(colors.orange) lightness(-40%))',
 
   'yellow-darkest': '#453411',
   'yellow-darker': '#684f1d',
   'yellow-dark': '#f2d024',
+  'secondary': '#ffed4a',
   'yellow': '#ffed4a',
   'yellow-light': '#fff382',
   'yellow-lighter': '#fff9c2',
   'yellow-lightest': '#fcfbeb',
 
-  'green-darkest': '#0f2f21',
+  /*'green-darkest': '#0f2f21',
   'green-darker': '#1a4731',
   'green-dark': '#1f9d55',
   'green': '#38c172',
   'green-light': '#51d88a',
   'green-lighter': '#a2f5bf',
-  'green-lightest': '#e3fcec',
+  'green-lightest': '#e3fcec',*/
+
+  'green': '#8EB839',
+  'green-lighter': 'color(config(colors.green) lightness(+40%))',
+  'green-light': 'color(config(colors.green) lightness(+20%))',
+  'green-dark': 'color(config(colors.green) lightness(-20%))',
+  'green-darker': 'color(config(colors.green) lightness(-40%))',
 
   'teal-darkest': '#0d3331',
   'teal-darker': '#20504f',
@@ -127,6 +150,32 @@ let colors = {
   'pink-light': '#fa7ea8',
   'pink-lighter': '#ffbbca',
   'pink-lightest': '#ffebef',
+
+  // Primary/secondary etc:
+
+  'primary': '#1F6AAF',
+  'primary-lighter': 'color(config(colors.primary) lightness(+50%))',
+  'primary-light': 'color(config(colors.primary) lightness(+25%))',
+  'primary-dark': 'color(config(colors.primary) lightness(-25%))',
+  'primary-lighter': 'color(config(colors.primary) lightness(+50%))',
+
+  'background': 'config(colors.white)',
+
+  'link': 'config(colors.primary)',
+  'active': 'config(colors.primary)'
+
+}
+
+let screens = {
+  'xs': '380px',
+  'sm': '576px',
+  'md': '768px',
+  'lg': '992px',
+  'xl': '1200px',
+  'menu': '1200px',
+  'xxl': '1440px',
+  'full': '2048px',
+  // 'gutter-break': 'config(screens.lg)',
 }
 
 module.exports = {
@@ -166,13 +215,7 @@ module.exports = {
   |
   */
 
-  screens: {
-    'sm': '576px',
-    'md': '768px',
-    'lg': '992px',
-    'xl': '1200px',
-  },
-
+  screens: screens,
 
   /*
   |-----------------------------------------------------------------------------
@@ -194,6 +237,7 @@ module.exports = {
 
   fonts: {
     'sans': [
+      'gt-america',
       'system-ui',
       'BlinkMacSystemFont',
       '-apple-system',
@@ -208,7 +252,7 @@ module.exports = {
       'sans-serif',
     ],
     'serif': [
-      'Beirut Display',
+      'Libre Baskerville',
       'Constantia',
       'Lucida Bright',
       'Lucidabright',
@@ -251,15 +295,18 @@ module.exports = {
   */
 
   textSizes: {
-    'xs': '.75rem',     // 12px
-    'sm': '.875rem',    // 14px
-    'base': '1rem',     // 16px
-    'lg': '1.125rem',   // 18px
-    'xl': '1.25rem',    // 20px
-    '2xl': '1.5rem',    // 24px
-    '3xl': '1.875rem',  // 30px
-    '4xl': '2.25rem',   // 36px
-    '5xl': '3rem',      // 48px
+    //'3xs': '.5rem',
+    //'2xs': '.66rem',
+    'xs': '.66rem',
+    'sm': '.75rem',
+    'base': '1rem',
+    'lg': '1.25rem'
+    //'xl': '1.25rem',    // 20/30px
+    //'2xl': '1.5rem',    // 24/36px
+    //'3xl': '1.875rem',  // 30/45px
+    //'4xl': '2.25rem',   // 36/54px
+    //'5xl': '2.75rem',   // 48/72px
+    //'6xl': '3.75rem'    // 68/102px
   },
 
 
@@ -398,8 +445,12 @@ module.exports = {
     default: '1px',
     '0': '0',
     '2': '2px',
+    '3': '3px',
     '4': '4px',
+    '6': '6px',
     '8': '8px',
+    '12': '12px',
+    '16': '16px',
   },
 
 
@@ -444,7 +495,8 @@ module.exports = {
     'sm': '.125rem',
     default: '.25rem',
     'lg': '.5rem',
-    'full': '9999px',
+    'full': '99rem',
+    'circle': '50%'
   },
 
 
@@ -470,6 +522,7 @@ module.exports = {
 
   width: {
     'auto': 'auto',
+    '0': '0',
     'px': '1px',
     '1': '0.25rem',
     '2': '0.5rem',
@@ -483,8 +536,26 @@ module.exports = {
     '16': '4rem',
     '24': '6rem',
     '32': '8rem',
+    '40': '10rem',
     '48': '12rem',
     '64': '16rem',
+    '80': '20rem',
+    '1em': '1em',
+    'ems-1': '0.25em',
+    'ems-2': '0.5em',
+    'ems-3': '0.75em',
+    'ems-4': '1em',
+    'ems-5': '1.25em',
+    'ems-6': '1.5em',
+    'ems-8': '2em',
+    'ems-10': '2.5em',
+    'ems-12': '3em',
+    'ems-16': '4em',
+    'ems-24': '6em',
+    'ems-32': '8em',
+    'ems-40': '10em',
+    'ems-48': '12em',
+    'ems-64': '16em',
     '1/2': '50%',
     '1/3': '33.33333%',
     '2/3': '66.66667%',
@@ -497,6 +568,18 @@ module.exports = {
     '1/6': '16.66667%',
     '5/6': '83.33333%',
     'full': '100%',
+    '3/2': '150%',
+    '1/2-screen': '50vw',
+    '1/3-screen': '33.33333vw',
+    '2/3-screen': '66.66667vw',
+    '1/4-screen': '25vw',
+    '3/4-screen': '75vw',
+    '1/5-screen': '20vw',
+    '2/5-screen': '40vw',
+    '3/5-screen': '60vw',
+    '4/5-screen': '80vw',
+    '1/6-screen': '16.66667vw',
+    '5/6-screen': '83.33333vw',
     'screen': '100vw',
   },
 
@@ -518,6 +601,7 @@ module.exports = {
 
   height: {
     'auto': 'auto',
+    '0': '0',
     'px': '1px',
     '1': '0.25rem',
     '2': '0.5rem',
@@ -531,10 +615,40 @@ module.exports = {
     '16': '4rem',
     '24': '6rem',
     '32': '8rem',
+    '40': '10rem',
     '48': '12rem',
     '64': '16rem',
+    '1em': '1em',
+    'ems-1': '0.25em',
+    'ems-2': '0.5em',
+    'ems-3': '0.75em',
+    'ems-4': '1em',
+    'ems-5': '1.25em',
+    'ems-6': '1.5em',
+    'ems-8': '2em',
+    'ems-10': '2.5em',
+    'ems-12': '3em',
+    'ems-16': '4em',
+    'ems-24': '6em',
+    'ems-32': '8em',
+    'ems-40': '10em',
+    'ems-48': '12em',
+    'ems-64': '16em',
+    'ems-70': '20em',
+    '1/2': '50%',
+    '1/3': '33.33333%',
+    '2/3': '66.66667%',
+    '1/4': '25%',
+    '3/4': '75%',
+    '1/5': '20%',
+    '2/5': '40%',
+    '3/5': '60%',
+    '4/5': '80%',
+    '1/6': '16.66667%',
+    '5/6': '83.33333%',
     'full': '100%',
     'screen': '100vh',
+    'vh': '100vh',
   },
 
 
@@ -573,6 +687,54 @@ module.exports = {
   */
 
   minHeight: {
+    '1': '0.25rem',
+    '2': '0.5rem',
+    '3': '0.75rem',
+    '4': '1rem',
+    '5': '1.25rem',
+    '6': '1.5rem',
+    '8': '2rem',
+    '10': '2.5rem',
+    '12': '3rem',
+    '16': '4rem',
+    '24': '6rem',
+    '32': '8rem',
+    '40': '10rem',
+    '48': '12rem',
+    '64': '16rem',
+    'xs': '25rem',
+    'sm': '30rem',
+    'md': '40rem',
+    'lg': '50rem',
+    'xl': '60rem',
+    '2xl': '70rem',
+    '3xl': '80rem',
+    '4xl': '90rem',
+    '5xl': '100rem',
+    'ems-1': '0.25em',
+    'ems-2': '0.5em',
+    'ems-3': '0.75em',
+    'ems-4': '1em',
+    'ems-5': '1.25em',
+    'ems-6': '1.5em',
+    'ems-8': '2em',
+    'ems-10': '2.5em',
+    'ems-12': '3em',
+    'ems-16': '4em',
+    'ems-24': '6em',
+    'ems-32': '8em',
+    'ems-40': '10em',
+    'ems-48': '12em',
+    'ems-64': '16em',
+    'ems-xs': '25em',
+    'ems-sm': '30em',
+    'ems-md': '40em',
+    'ems-lg': '50em',
+    'ems-xl': '60em',
+    'ems-2xl': '70em',
+    'ems-3xl': '80em',
+    'ems-4xl': '90em',
+    'ems-5xl': '100em',
     '0': '0',
     'full': '100%',
     'screen': '100vh',
@@ -595,8 +757,23 @@ module.exports = {
   */
 
   maxWidth: {
-    'xs': '20rem',
+    '4': '1rem',
+    '5': '1.25rem',
+    '6': '1.5rem',
+    '8': '2rem',
+    '10': '2.5rem',
+    '12': '3rem',
+    '16': '4rem',
+    '24': '6rem',
+    '32': '8rem',
+    '40': '10rem',
+    '48': '12rem',
+    '64': '16rem',
+    '72': '18rem',
+    '2xs': '20rem',
+    'xs': '25rem',
     'sm': '30rem',
+    'smd': '35rem',
     'md': '40rem',
     'lg': '50rem',
     'xl': '60rem',
@@ -604,7 +781,29 @@ module.exports = {
     '3xl': '80rem',
     '4xl': '90rem',
     '5xl': '100rem',
+    'ems-4': '1em',
+    'ems-5': '1.25em',
+    'ems-6': '1.5em',
+    'ems-8': '2em',
+    'ems-10': '2.5em',
+    'ems-12': '3em',
+    'ems-16': '4em',
+    'ems-24': '6em',
+    'ems-32': '8em',
+    'ems-40': '10em',
+    'ems-48': '12em',
+    'ems-64': '16em',
+    'ems-xs': '25em',
+    'ems-sm': '30em',
+    'ems-md': '40em',
+    'ems-lg': '50em',
+    'ems-xl': '60em',
+    'ems-2xl': '70em',
+    'ems-3xl': '80em',
+    'ems-4xl': '90em',
+    'ems-5xl': '100em',
     'full': '100%',
+    'none': 'none'
   },
 
 
@@ -623,7 +822,9 @@ module.exports = {
   */
 
   maxHeight: {
+    '0': '0px',
     'full': '100%',
+    'vh': '100vh',
     'screen': '100vh',
   },
 
@@ -659,6 +860,19 @@ module.exports = {
     '20': '5rem',
     '24': '6rem',
     '32': '8rem',
+    'ems-1': '0.25em',
+    'ems-2': '0.5em',
+    'ems-3': '0.75em',
+    'ems-4': '1em',
+    'ems-5': '1.25em',
+    'ems-6': '1.5em',
+    'ems-8': '2em',
+    'ems-10': '2.5em',
+    'ems-12': '3em',
+    'ems-16': '4em',
+    'ems-20': '5em',
+    'ems-24': '6em',
+    'ems-32': '8em'
   },
 
 
@@ -694,6 +908,34 @@ module.exports = {
     '20': '5rem',
     '24': '6rem',
     '32': '8rem',
+    '40': '10rem',
+    '48': '12rem',
+    'ems-1': '0.25em',
+    'ems-2': '0.5em',
+    'ems-3': '0.75em',
+    'ems-4': '1em',
+    'ems-5': '1.25em',
+    'ems-6': '1.5em',
+    'ems-8': '2em',
+    'ems-10': '2.5em',
+    'ems-12': '3em',
+    'ems-16': '4em',
+    'ems-20': '5em',
+    'ems-24': '6em',
+    'ems-32': '8em',
+    '1/2': '50%',
+    '1/3': '33.33333%',
+    '2/3': '66.66667%',
+    '1/4': '25%',
+    '3/4': '75%',
+    '1/5': '20%',
+    '2/5': '40%',
+    '3/5': '60%',
+    '4/5': '80%',
+    '1/6': '16.66667%',
+    '5/6': '83.33333%',
+    'full': '100%'
+    //'gutter-y': ''
   },
 
 
@@ -728,6 +970,31 @@ module.exports = {
     '20': '5rem',
     '24': '6rem',
     '32': '8rem',
+    'ems-1': '0.25em',
+    'ems-2': '0.5em',
+    'ems-3': '0.75em',
+    'ems-4': '1em',
+    'ems-5': '1.25em',
+    'ems-6': '1.5em',
+    'ems-8': '2em',
+    'ems-10': '2.5em',
+    'ems-12': '3em',
+    'ems-16': '4em',
+    'ems-20': '5em',
+    'ems-24': '6em',
+    'ems-32': '8em',
+    '1/2': '50%',
+    '1/3': '33.33333%',
+    '2/3': '66.66667%',
+    '1/4': '25%',
+    '3/4': '75%',
+    '1/5': '20%',
+    '2/5': '40%',
+    '3/5': '60%',
+    '4/5': '80%',
+    '1/6': '16.66667%',
+    '5/6': '83.33333%',
+    'full': '100%'
   },
 
 
@@ -778,6 +1045,7 @@ module.exports = {
     '30': 30,
     '40': 40,
     '50': 50,
+    't': 99
   },
 
 
@@ -796,10 +1064,16 @@ module.exports = {
 
   opacity: {
     '0': '0',
+    '12': '.125',
     '25': '.25',
+    '33': '.33333',
     '50': '.5',
+    '66': '.66667',
     '75': '.75',
+    '80': '.8',
+    '85': '.85',
     '100': '1',
+    '1': '1'
   },
 
 
@@ -864,12 +1138,12 @@ module.exports = {
   modules: {
     appearance: ['responsive'],
     backgroundAttachment: ['responsive'],
-    backgroundColors: ['responsive', 'hover', 'focus'],
+    backgroundColors: ['responsive', 'hover', 'focus', 'group-hover'],
     backgroundPosition: ['responsive'],
     backgroundRepeat: ['responsive'],
     backgroundSize: ['responsive'],
     borderCollapse: [],
-    borderColors: ['responsive', 'hover', 'focus'],
+    borderColors: ['responsive', 'hover', 'focus', 'group-hover'],
     borderRadius: ['responsive'],
     borderStyle: ['responsive'],
     borderWidths: ['responsive'],
@@ -878,7 +1152,7 @@ module.exports = {
     flexbox: ['responsive'],
     float: ['responsive'],
     fonts: ['responsive'],
-    fontWeights: ['responsive', 'hover', 'focus'],
+    fontWeights: ['responsive', 'hover', 'focus', 'group-hover'],
     height: ['responsive'],
     leading: ['responsive'],
     lists: ['responsive'],
@@ -890,21 +1164,22 @@ module.exports = {
     negativeMargin: ['responsive'],
     objectFit: false,
     objectPosition: false,
-    opacity: ['responsive'],
+    opacity: ['responsive', 'hover', 'focus', 'group-hover'],
     outline: ['focus'],
     overflow: ['responsive'],
     padding: ['responsive'],
-    pointerEvents: ['responsive'],
+    pointerEvents: ['responsive', 'hover', 'group-hover'],
     position: ['responsive'],
     resize: ['responsive'],
-    shadows: ['responsive', 'hover', 'focus'],
+    shadows: ['responsive', 'hover', 'focus', 'group-hover'],
     svgFill: [],
     svgStroke: [],
     tableLayout: ['responsive'],
     textAlign: ['responsive'],
-    textColors: ['responsive', 'hover', 'focus'],
+    textColors: ['responsive', 'hover', 'focus', 'group-hover'],
     textSizes: ['responsive'],
-    textStyle: ['responsive', 'hover', 'focus'],
+    //textSizes: false, // fluid
+    textStyle: ['responsive', 'hover', 'focus', 'group-hover'],
     tracking: ['responsive'],
     userSelect: ['responsive'],
     verticalAlign: ['responsive'],
@@ -930,10 +1205,12 @@ module.exports = {
   */
 
   plugins: [
-    require('tailwindcss/plugins/container')({
-      // center: true,
-      // padding: '1rem',
-    }),
+    
+    /*require('tailwindcss-fluid')({
+      // settings
+      suffix: '',
+      textSizes: true // use the settings defined the core config (above)
+    }),*/
   ],
 
 

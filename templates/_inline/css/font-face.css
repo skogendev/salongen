@@ -1,6 +1,0 @@
-@font-face {
-  font-family: 'Basis Grotesque';
-  font-weight: bold;
-  src: url('/assets/fonts/basis-grotesque-bold-pro.woff2') format("woff2"), url('/assets/fonts/basis-grotesque-bold-pro.woff') format("woff");
-  font-display: swap;
-}

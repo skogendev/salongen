@@ -21,9 +21,9 @@
     padding-left: var(--flexgrid-gx-mobile)/2;
     padding-right: var(--flexgrid-gx-mobile)/2;
   }
-  @screen md {
-    margin-left: calc(- var(--flexgrid-gx-desktop)/2);
-    margin-right: calc(- var(--flexgrid-gx-desktop)/2);
+  @screen lg {
+    margin-left: calc(0 - var(--flexgrid-gx-desktop)/2);
+    margin-right: calc(0 - var(--flexgrid-gx-desktop)/2);
     & > [class*="col-"] {
       padding-left: calc(var(--flexgrid-gx-desktop)/2);
       padding-right: calc(var(--flexgrid-gx-desktop)/2);
@@ -34,34 +34,112 @@
 .u-flexgrid-g,
 .u-flexgrid-gy {
   & > [class*="col-"] { padding-bottom: var(--flexgrid-gy-mobile) }
-  @screen md {
+  @screen lg {
     & > [class*="col-"] { padding-bottom: var(--flexgrid-gy-desktop) }
   }
 }
 
 
 
+
 @responsive {
-  .u-flexgrid,
-  .u-flexgrid-g,
-  .u-flexgrid-gx,
-  .u-flexgrid-gy {
-    @for $i from 1 to 11 {
-      & > .col-$i {
-        flex-basis: calc((100%/12) * $i);
-        max-width: calc((100%/12) * $i);
-      }
+  @for $i from 1 to 12 {
+    .u-flexgrid-g > .col-$i {
+      flex-basis: calc((100%/12) * $i);
+      max-width: calc((100%/12) * $i);
     }
-
-    & > .col-auto {
-      max-width: none;
-      flex: 1 1;
-      flex-basis: auto;
+    .u-flexgrid > .col-$i {
+      flex-basis: calc((100%/12) * $i);
+      max-width: calc((100%/12) * $i);
     }
-
-    @for $i from 1 to 11 {
-      & > .col-off-$i { margin-left: calc((100%/12) * $i); }
-    }
-
   }
+
+  .u-flexgrid-g > .col-auto {
+    max-width: none;
+    flex: 1 1;
+    flex-basis: auto;
+  }
+
+  @for $i from 1 to 12 {
+    .u-flexgrid-g > .col-off-$i { margin-left: calc((100%/12) * $i); }
+  }
+}
+
+.c-grid-guide {
+  background: rgba(255,0,0,.2);
+  height: 100vh;
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  top: 0;
+  left: 0;
+  & [class*=col] {
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      height: 100vh;
+      width: calc(100% - calc(var(--gutter-x-desktop)));
+      left: calc(var(--gutter-x-desktop) / 2);
+      background: rgba(255,255,255,.5);
+    }
+  }
+  & .u-flexgrid [class*=col]:after {
+    width: 100%;
+    left: 0;
+    border-left: 1px solid rgba(0,0,0,.2);
+    border-right: 1px solid rgba(0,0,0,.2);
+  }
+}
+
+.w-1-col { width: calc(((100vw / 12) * 1) - var(--gutter-x-desktop)); }
+.w-2-col { width: calc(((100vw / 12) * 2) - var(--gutter-x-desktop)); }
+.w-3-col { width: calc(((100vw / 12) * 3) - var(--gutter-x-desktop)); }
+.w-4-col { width: calc(((100vw / 12) * 4) - var(--gutter-x-desktop)); }
+.w-5-col { width: calc(((100vw / 12) * 5) - var(--gutter-x-desktop)); }
+.w-6-col { width: calc(((100vw / 12) * 6) - var(--gutter-x-desktop)); }
+.w-7-col { width: calc(((100vw / 12) * 7) - var(--gutter-x-desktop)); }
+.w-8-col { width: calc(((100vw / 12) * 8) - var(--gutter-x-desktop)); }
+.w-9-col { width: calc(((100vw / 12) * 9) - var(--gutter-x-desktop)); }
+.w-10-col { width: calc(((100vw / 12) * 10) - var(--gutter-x-desktop)); }
+.w-11-col { width: calc(((100vw / 12) * 11) - var(--gutter-x-desktop)); }
+.w-12-col { width: calc(((100vw / 12) * 12) - var(--gutter-x-desktop)); }
+
+@screen xl {
+  .md:w-1-col { width: calc(calc((calc(config('screens.md') / 12) * 1) - var(--gutter-x-desktop))); }
+  .md:w-2-col { width: calc(calc((calc(config('screens.md') / 12) * 2) - var(--gutter-x-desktop))); }
+  .md:w-3-col { width: calc(calc((calc(config('screens.md') / 12) * 3) - var(--gutter-x-desktop))); }
+  .md:w-4-col { width: calc(calc((calc(config('screens.md') / 12) * 4) - var(--gutter-x-desktop))); }
+  .md:w-5-col { width: calc(calc((calc(config('screens.md') / 12) * 5) - var(--gutter-x-desktop))); }
+  .md:w-6-col { width: calc(calc((calc(config('screens.md') / 12) * 6) - var(--gutter-x-desktop))); }
+  .md:w-7-col { width: calc(calc((calc(config('screens.md') / 12) * 7) - var(--gutter-x-desktop))); }
+  .md:w-8-col { width: calc(calc((calc(config('screens.md') / 12) * 8) - var(--gutter-x-desktop))); }
+  .md:w-9-col{width: calc(calc((calc(config('screens.md') / 12) * 9) - var(--gutter-x-desktop)));}
+  .md:w-10-col { width: calc(calc((calc(config('screens.md') / 12) * 10) - var(--gutter-x-desktop))); }
+  .md:w-11-col { width: calc(calc((calc(config('screens.md') / 12) * 11) - var(--gutter-x-desktop))); }
+  .md:w-12-col { width: calc(calc((calc(config('screens.md') / 12) * 12) - var(--gutter-x-desktop))); }
+}
+
+
+.u-line-up-with-grid {
+  margin-left: calc(var(--padding) + calc(var(--flexgrid-gx-mobile) / 2));
+  @screen lg {
+    margin-left: calc(var(--container-margin) + calc(var(--flexgrid-gx-desktop) / 2));
+  }
+}
+
+@media all and (min-width: 112rem) {
+  .u-line-up-with-grid {
+    background: red;
+    margin-left: calc(calc(calc(100vw - var(--container-max-width)) / 2) + var(--container-margin)  + calc(var(--flexgrid-gx-desktop) / 2));
+  }
+}
+
+
+.mb-one-col {
+  margin-bottom: calc(((100vw - calc(var(--container-margin) * 2)) / 12) + calc(var(--flexgrid-gx-desktop) / 2));
+}
+
+.pl-one-col {
+  padding-left: calc((((100vw - calc(var(--container-margin) * 2) -  calc(var(--flexgrid-gx-desktop) / 2))) / 12) + calc(var(--flexgrid-gx-desktop) / 2));
 }
