@@ -1,0 +1,11 @@
+@import 'flatpickr/dist/themes/airbnb.css';
+@import 'flatpickr';
+
+.swiper-container {
+
+}
+
+.swiper-slide {
+  width: 40vw !important;
+  margin-right: 10vw !important;
+}
