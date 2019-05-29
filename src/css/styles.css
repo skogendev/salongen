@@ -20,8 +20,8 @@
   --color: var(--color-skog);
 
   /* TYPOGRAPHY */
-  --font-family: Gotham Narrow;
-  --font-serif: 'Bluu Suuperstar';
+  --font-family: gothamnarrow;
+  --font-serif: bluu;
 
   /* SPACING */
   --padding: 1.25rem;
@@ -171,6 +171,10 @@ hr {
     left: 1px;
     clip-path: polygon(50% 0, calc(100% - var(--button-pointer-distance) + 1px) 0, calc(100% - 0px) 50%, calc(100% - calc(var(--button-pointer-distance) + 0px)) calc(100% + 1px), var(--button-pointer-distance) calc(100% + 1px), 0 50%, var(--button-pointer-distance) -1px);
   }
+}
+
+.bg-krem-light .button:before {
+  background: var(--color-krem-light);
 }
 
 button.button:hover,
@@ -351,7 +355,7 @@ a.button:hover {
   font-size: 0.8em;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  font-weight: 500;
+  font-family: gothamnarrowmedium;
   &, & a { text-decoration: none !important; }
   line-height: 1.7;
 }
@@ -502,7 +506,7 @@ a.button:hover {
 }
 
 .ref-box {
-  height: 35rem;
+  min-height: 15rem;
   overflow: hidden;
   position: relative;
 }

@@ -20,7 +20,7 @@
 					<ul class="ticker list-reset">
 						<li>Snakkes snart, da!</li>
 						<li><img src="/assets/svg/emblem.svg"></li>
-						<li>Hey hey</li>
+						<li>Velkommen hit!</li>
 						<li><img src="/assets/svg/emblem.svg"></li>
 					</ul>
 				</div>
@@ -39,6 +39,7 @@
 		<nav class="w-1/2 main-nav heading-sm hidden lg:flex  justify-center js-show-nav-element main-header-border  items-center">
 
 			<ul class="list-none p-0 leading-loose lg:flex lg:text-center">
+				<li class="hidden"><a href="/"<?php if ($activePage == 'index') { echo ' class="active"'; } ?>>00 Hjem</a></li>
 				<li class="lg:px-2 xl:px-3"><a href="/konferanse.php"<?php if ($activePage == 'konferanse') { echo ' class="active"'; } ?>><span class="text-eple">01</span> Konferanse</a></li>
 				<li class="lg:px-2 xl:px-3"><a href="/moterom.php" <?php if ($activePage == 'moterom') { echo ' class="active"'; } ?>><span class="text-eple">02</span> Møterom</a></li>
 				<li class="lg:px-2 xl:px-3"><a href="/mat-drikke.php" <?php if ($activePage == 'mat-drikke') { echo ' class="active"'; } ?>><span class="text-eple">03</span> Mat & Drikke</a></li>

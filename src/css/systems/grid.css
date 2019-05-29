@@ -130,7 +130,6 @@
 
 @media all and (min-width: 112rem) {
   .u-line-up-with-grid {
-    background: red;
     margin-left: calc(calc(calc(100vw - var(--container-max-width)) / 2) + var(--container-margin)  + calc(var(--flexgrid-gx-desktop) / 2));
   }
 }

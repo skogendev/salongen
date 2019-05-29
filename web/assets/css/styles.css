@@ -1338,7 +1338,6 @@ span.flatpickr-weekday {
 
 @media all and (min-width: 112rem) {
   .u-line-up-with-grid {
-    background: red;
     margin-left: calc(calc(calc(100vw - var(--container-max-width)) / 2) + var(--container-margin)  + calc(var(--flexgrid-gx-desktop) / 2));
   }
 }
@@ -8965,8 +8964,8 @@ button.swiper-pagination-bullet {
   --bg-color: #fff;
   --color: var(--color-skog);
   /* TYPOGRAPHY */
-  --font-family: Gotham Narrow;
-  --font-serif: 'Bluu Suuperstar';
+  --font-family: gothamnarrow;
+  --font-serif: bluu;
   /* SPACING */
   --padding: 1.25rem;
   --container-margin: 7rem;
@@ -9099,7 +9098,7 @@ hr {
   font-size: 0.8em;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  font-weight: 500;
+  font-family: gothamnarrowmedium;
   line-height: 1.7;
   color: var(--color-eple);
   padding: 1em 2em;
@@ -9127,6 +9126,10 @@ hr {
             clip-path: polygon(50% 0, calc(100% - var(--button-pointer-distance) + 1px) 0, calc(100% - 0px) 50%, calc(100% - calc(var(--button-pointer-distance) + 0px)) calc(100% + 1px), var(--button-pointer-distance) calc(100% + 1px), 0 50%, var(--button-pointer-distance) -1px);
   }
 
+.bg-krem-light .button:before {
+  background: var(--color-krem-light);
+}
+
 button.button:hover,
 a.button:hover {
   color: #fff;
@@ -9143,7 +9146,7 @@ button.button:hover:before, a.button:hover:before {
   font-size: 0.8em;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  font-weight: 500;
+  font-family: gothamnarrowmedium;
   line-height: 1.7;
   color: var(--color-eple);
   border: 1px solid currentColor;
@@ -9188,7 +9191,7 @@ button.button:hover:before, a.button:hover:before {
   font-size: 0.8em;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  font-weight: 500;
+  font-family: gothamnarrowmedium;
   line-height: 1.7;
   color: #fff;
   background: var(--color-skog);
@@ -9330,7 +9333,7 @@ button.button:hover:before, a.button:hover:before {
   font-size: 0.8em;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  font-weight: 500;
+  font-family: gothamnarrowmedium;
   line-height: 1.7;
 }
 
@@ -9539,7 +9542,7 @@ button.button:hover:before, a.button:hover:before {
   }
 
 .ref-box {
-  height: 35rem;
+  min-height: 15rem;
   overflow: hidden;
   position: relative;
 }
@@ -9582,7 +9585,7 @@ button.button:hover:before, a.button:hover:before {
     font-size: 0.8em;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    font-weight: 500;
+    font-family: gothamnarrowmedium;
     line-height: 1.7;
     color: var(--color-eple);
     width: 33%;

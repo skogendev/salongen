@@ -8,7 +8,7 @@
             <h2 class="heading-lg">Book ditt neste arrangement hos oss</h2>
             <hr class="hr mx-0">
               <p>Salongen er et personlig og inspirerende konferansehus med et stort hjerte for å skreddersy arrangementer av høy kvalitet. Salongen har møterom og fasiliteter som passer fint for både små møter og større arrangementer. </p>
-              <input class="c-calendar border-primary mb-8 button" type="text" placeholder="Velg en dato" value="2019-05-23T00:00:00.000Z" readonly="readonly">
+              <input class="c-calendar border-primary mb-8" type="text" placeholder="Velg en dato" value="2019-05-23T00:00:00.000Z" readonly="readonly">
       				<button class="button">Sjekk</button>
           </div>
         </div>
@@ -18,7 +18,7 @@
             <h2 class="heading-lg">Det perfekte sted for møter</h2>
             <hr class="hr mx-0">
               <p>Salongen er et personlig og inspirerende konferansehus med et stort hjerte for å skreddersy arrangementer av høy kvalitet. </p>
-              <input class="c-calendar border-primary mb-8 button" type="text" placeholder="Velg en dato" value="2019-05-23T00:00:00.000Z" readonly="readonly">
+              <input class="c-calendar border-primary mb-8" type="text" placeholder="Velg en dato" value="2019-05-23T00:00:00.000Z" readonly="readonly">
       				<button class="button">Sjekk</button>
           </div>
         </div>

@@ -3,7 +3,7 @@
 <body data-barba="wrapper">
 
 <?php
-  $activePage = 'moterom';
+  $activePage = 'index';
   include('inc/header.php')
 ?>
 
