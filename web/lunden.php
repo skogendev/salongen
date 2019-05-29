@@ -1,13 +1,13 @@
 <html>
 <?php include('inc/head.php') ?>
-<body>
+<body data-barba="wrapper">
 
 <?php
   $activePage = 'moterom';
   include('inc/header.php')
 ?>
 
-<div class="main-content">
+<div class="main-content" data-barba="container" data-barba-namespace="home">
 
   <?php include('components/meeting-rooms-intro.php') ?>
 
