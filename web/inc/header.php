@@ -36,7 +36,7 @@
 				</svg>
 			</button>
 		</div>
-		<nav class="w-1/2 main-nav heading-sm hidden lg:flex  justify-center js-show-nav-element main-header-border  items-center">
+		<nav class="w-1/2 main-nav heading-sm hidden lg:flex  justify-center js-show-nav-element main-header-border py-4 items-center">
 
 			<ul class="list-none p-0 leading-loose lg:flex lg:text-center">
 				<li class="hidden"><a href="/"<?php if ($activePage == 'index') { echo ' class="active"'; } ?>>00 Hjem</a></li>

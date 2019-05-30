@@ -9052,7 +9052,8 @@ ul {
 
 p,
 figcaption,
-td {
+td,
+blockquote {
   line-height: 1.5;
   margin: 0 0 1em;
 }
@@ -9245,35 +9246,42 @@ button.button:hover:before, a.button:hover:before {
   background: var(--color-krem-light);
 }
 
+@media (min-width: 1024px) {
+
 [class*=bg-split] {
-  /* background: url(/assets/svg/bg-normal.svg);*/
-  position: relative;
+    position: relative
 }
 
-[class*=bg-split]:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    height: 100%;
-    background: var(--color-krem);
-    width: 1px;
+    [class*=bg-split]:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      height: 100%;
+      background: var(--color-krem);
+      width: 1px;
+    }
   }
 
-.bg-split-left:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    height: 100%;
-    background: var(--color-krem-light);
-    width: 50%;
-    z-index: -1;
+@media (min-width: 1024px) {
+    .bg-split-left:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      height: 100%;
+      background: var(--color-krem-light);
+      width: 50%;
+      z-index: -1;
+    }
   }
+
+@media (min-width: 1024px) {
 
 .bg-split-right {
-  background: url(/assets/svg/bg-right.svg);
+    background: url(/assets/svg/bg-right.svg)
 }
+  }
 
 .bg-segl:after {
   position: absolute;
@@ -9321,6 +9329,9 @@ button.button:hover:before, a.button:hover:before {
 /* Colors */
 
 .text-eple { color: var(--color-eple);
+}
+
+.text-krem { color: var(--color-krem);
 }
 
 /* Typography */
@@ -9571,6 +9582,10 @@ button.button:hover:before, a.button:hover:before {
   background-image: url(/assets/svg/arrow-down.svg);
 }
 
+table {
+  font-size: 1em;
+}
+
 .table-specs {
   margin-top: 2em;
   width: 100%;
@@ -9675,12 +9690,19 @@ button.button:hover:before, a.button:hover:before {
   transition: 1s opacity, 1s -webkit-transform var(--ease-out-circ);
   transition: 1s transform var(--ease-out-circ), 1s opacity;
   transition: 1s transform var(--ease-out-circ), 1s opacity, 1s -webkit-transform var(--ease-out-circ);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
 }
 
 .inview.lazyloaded {
   -webkit-transform: scale(1);
           transform: scale(1);
   opacity: 1;
+}
+
+.sticky-image .inview.lazyloaded {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .js-load-stagger {
@@ -9864,6 +9886,9 @@ button.button:hover:before, a.button:hover:before {
             animation: ticker var(--animation-delay) infinite;
     -webkit-animation-play-state: paused;
             animation-play-state: paused;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+    opacity: 0;
   }
 
 .ticker li.active {
@@ -9902,6 +9927,55 @@ button.button:hover:before, a.button:hover:before {
 
   100% { -webkit-transform: translate(-50%,5rem); transform: translate(-50%,5rem); opacity: 0;
   }
+}
+
+.map-label {
+  color: #fff;
+  position: absolute;
+  top: -1rem;
+  left: 0;
+  -webkit-transform: translate(-50%,-240%);
+          transform: translate(-50%,-240%);
+  font-size: 1.3em;
+  font-family: gothamnarrowmedium;
+}
+
+.list-map {
+  counter-reset: kontakt;
+  list-style: none;
+  padding-left: 3em;
+  position: relative;
+}
+
+.list-map li {
+    margin-bottom: 2.5em;
+    line-height: 1.5;
+  }
+
+.list-map li:before {
+    position: absolute;
+    left: 0;
+    background: url(/assets/svg/map-marker.svg) no-repeat;
+    background-size: contain;
+    width: 2rem;
+    height: 3rem;
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-family: gothamnarrowmedium;
+    line-height: 1.7;
+    color: #fff;
+    counter-increment: kontakt;
+    content: counter(kontakt);
+  }
+
+.list-map li:before, .list-map li:before a { text-decoration: none !important;
+    }
+
+.gradient-bottom {
+  background: linear-gradient(0deg, rgba(48,54,38,1) 0%, rgba(48,54,38,0) 100%);
 }
 
 @media (min-width: 640px) {
@@ -16989,6 +17063,10 @@ button.button:hover:before, a.button:hover:before {
 
   .sm\:z-auto {
     z-index: auto;
+  }
+
+  .sm\:bg-krem-light {
+    background: var(--color-krem-light);
   }
 }
 
@@ -24078,6 +24156,10 @@ button.button:hover:before, a.button:hover:before {
   .md\:z-auto {
     z-index: auto;
   }
+
+  .md\:bg-krem-light {
+    background: var(--color-krem-light);
+  }
 }
 
 @media (min-width: 1024px) {
@@ -31166,6 +31248,10 @@ button.button:hover:before, a.button:hover:before {
   .lg\:z-auto {
     z-index: auto;
   }
+
+  .lg\:bg-krem-light {
+    background: var(--color-krem-light);
+  }
 }
 
 @media (min-width: 1280px) {
@@ -38253,5 +38339,9 @@ button.button:hover:before, a.button:hover:before {
 
   .xl\:z-auto {
     z-index: auto;
+  }
+
+  .xl\:bg-krem-light {
+    background: var(--color-krem-light);
   }
 }

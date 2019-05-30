@@ -111,7 +111,8 @@ ul {
 
 p,
 figcaption,
-td {
+td,
+blockquote {
   line-height: 1.5;
   margin: 0 0 1em;
 }
@@ -273,39 +274,48 @@ a.button:hover {
 
 }
 
-.bg-krem-light {
-  background: var(--color-krem-light);
+@responsive {
+  .bg-krem-light {
+    background: var(--color-krem-light);
+  }
 }
 
+
 [class*=bg-split] {
-  /* background: url(/assets/svg/bg-normal.svg);*/
-  position: relative;
-  &:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    height: 100%;
-    background: var(--color-krem);
-    width: 1px;
+  @screen lg {
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      height: 100%;
+      background: var(--color-krem);
+      width: 1px;
+    }
   }
 }
 
 .bg-split-left {
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    height: 100%;
-    background: var(--color-krem-light);
-    width: 50%;
-    z-index: -1;
+  @screen lg {
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      height: 100%;
+      background: var(--color-krem-light);
+      width: 50%;
+      z-index: -1;
+    }
   }
 }
 
 .bg-split-right {
-  background: url(/assets/svg/bg-right.svg);
+  @screen lg {
+    background: url(/assets/svg/bg-right.svg);
+  }
 }
 
 .bg-segl:after {
@@ -343,6 +353,7 @@ a.button:hover {
 
 /* Colors */
 .text-eple { color: var(--color-eple); }
+.text-krem { color: var(--color-krem); }
 
 /* Typography */
 .font-serif-primary {
@@ -534,6 +545,10 @@ a.button:hover {
   background-image: url(/assets/svg/arrow-down.svg);
 }
 
+table {
+  font-size: 1em;
+}
+
 .table-specs {
   margin-top: 2em;
   width: 100%;
@@ -618,11 +633,16 @@ a.button:hover {
   transform: scale(1.25);
   opacity: 0;
   transition: 1s transform var(--ease-out-circ), 1s opacity;
+  transform-origin: center center;
 }
 
 .inview.lazyloaded {
   transform: scale(1);
   opacity: 1;
+}
+
+.sticky-image .inview.lazyloaded {
+  transform: scale(1.1);
 }
 
 .js-load-stagger {
@@ -764,6 +784,9 @@ a.button:hover {
     transform: translate(-50%,-5rem);
     animation: ticker var(--animation-delay) infinite;
     animation-play-state: paused;
+    animation-fill-mode: forwards;
+    opacity: 0;
+
   }
   & li.active {
     animation-play-state: running;
@@ -780,4 +803,45 @@ a.button:hover {
   10% { transform: translate(-50%,-50%); opacity: 1;  }
   90% { transform: translate(-50%,-50%); opacity: 1;  }
   100% { transform: translate(-50%,5rem); opacity: 0;  }
+}
+
+.map-label {
+  color: #fff;
+  position: absolute;
+  top: -1rem;
+  left: 0;
+  transform: translate(-50%,-240%);
+  font-size: 1.3em;
+  font-family: gothamnarrowmedium;
+
+}
+
+.list-map {
+  counter-reset: kontakt;
+  list-style: none;
+  padding-left: 3em;
+  position: relative;
+  & li {
+    margin-bottom: 2.5em;
+    line-height: 1.5;
+  }
+  & li:before {
+    position: absolute;
+    left: 0;
+    background: url(/assets/svg/map-marker.svg) no-repeat;
+    background-size: contain;
+    width: 2rem;
+    height: 3rem;
+    padding: 0.5rem;
+    text-align: center;
+    @apply .heading-sm;
+    color: #fff;
+    counter-increment: kontakt;
+    content: counter(kontakt);
+  }
+
+}
+
+.gradient-bottom {
+  background: linear-gradient(0deg, rgba(48,54,38,1) 0%, rgba(48,54,38,0) 100%);
 }

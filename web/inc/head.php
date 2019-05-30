@@ -1,5 +1,5 @@
 <head>
-  <title>Salongen</title>
+  <title>SALONGEN</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style type="text/css">
     @font-face {
@@ -25,4 +25,5 @@
     }
 	</style>
   <link href="/assets/css/styles.css?v=<?php echo time() ?>" rel="stylesheet" type="text/css" media="all" />
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
 </head>

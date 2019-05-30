@@ -25,9 +25,10 @@
 
   <?php include('components/contact.php') ?>
 
+  <?php include('inc/footer.php') ?>
+
 </div>
 
-<?php include('inc/footer.php') ?>
 
 </body>
 </html>

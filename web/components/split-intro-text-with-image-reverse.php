@@ -1,11 +1,10 @@
 <div class="section bg-split bg-split-right">
   <div class="container mt-32 bg-segl">
     <div class="u-flexgrid-g items-center">
-
-      <div class="col-10 lg:col-5 xl:col-5">
-        <div class="overflow-hidden"><img src="/assets/img/tmp1.jpg" class="lazyload lazyload-img"></div>
+      <div class="col-12 lg:col-5 xl:col-5">
+        <div class="overflow-hidden"><img src="/assets/img/tmp1.jpg" class="lazyload lazyload-img mb-8"></div>
       </div>
-      <div class="col-10 lg:col-5 xl:col-5 xl:col-off-2 mb-16">
+      <div class="col-12 lg:col-5 xl:col-5 xl:col-off-2 lg:mb-16">
         <div class="heading-sm text-eple mb-4">Referanser</div>
         <h2 class="heading-lg">Se hva noen av våre fornøyde kunder har å si</h2>
         <blockquote class="mb-8">

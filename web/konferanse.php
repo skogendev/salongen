@@ -26,10 +26,10 @@
 
   <?php include('components/testimonials.php') ?>
 
+  <?php include('inc/footer.php') ?>
 
 </div>
 
-<?php include('inc/footer.php') ?>
 
 </body>
 </html>

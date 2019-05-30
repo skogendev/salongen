@@ -10,7 +10,6 @@ import inView from 'in-view';
 import Headroom from 'headroom.js';
 
 
-
 // Document ready
 
 document.addEventListener('DOMContentLoaded', function(){
@@ -200,14 +199,46 @@ var $tickerElements = $ticker.querySelectorAll('li');
 var currentTicker = 0;
 $tickerElements[0].classList.add('active');
 
-setInterval(function(){
+
+
+window.setCorrectingInterval = ( function( func, delay ) {
+    var instance = { };
+
+    function tick( func, delay ) {
+        if ( ! instance.started ) {
+            instance.func = func;
+            instance.delay = delay;
+            instance.startTime = new Date().valueOf();
+            instance.target = delay;
+            instance.started = true;
+
+            setTimeout( tick, delay );
+        } else {
+            var elapsed = new Date().valueOf() - instance.startTime,
+            adjust = instance.target - elapsed;
+
+            instance.func();
+            instance.target += instance.delay;
+
+            setTimeout( tick, instance.delay + adjust );
+        }
+    };
+
+    return tick( func, delay );
+} );
+
+
+var startTime = Date.now();
+/*
+setCorrectingInterval(function(){
   $tickerElements[currentTicker].classList.remove('active');
   currentTicker++;
-  console.log($tickerElements.length,currentTicker);
   if (currentTicker >= $tickerElements.length) {
     currentTicker = 0;
   }
   $tickerElements[currentTicker].classList.add('active');
+  console.log( ( Date.now() - startTime ) + 'ms elapsed' );
 
 
 }, 4000)
+*/
