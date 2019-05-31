@@ -1002,6 +1002,7 @@ span.flatpickr-weekday {
 
 .swiper-slide {
   width: 80vw !important;
+  height: auto !important;
   margin-right: 6% !important;
 }
 
@@ -1016,19 +1017,24 @@ span.flatpickr-weekday {
 }
   }
 
+.swiper-prev,
+.swiper-next {
+  background: none;
+}
+
 .swiper-prev svg,
 .swiper-next svg {
-  width: 75%;
-  height: 75%;
+  width: 2rem;
+  height: 2rem;
 }
 
 @media (min-width: 1024px) {
 
 .swiper-prev svg,
 .swiper-next svg {
-    width: 100%;
+    width: 3rem;
 
-    height: 100%
+    height: 3rem
 }
   }
 

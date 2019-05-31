@@ -9,6 +9,7 @@
 
 <div class="main-content" data-barba="container" data-barba-namespace="home">
   <?php
+    $subtitle = 'Konferanse';
     $title = 'Book din neste konferanse hos oss';
     $includeButtons = false;
     include('components/page-intro.php');
