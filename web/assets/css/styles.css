@@ -9087,90 +9087,98 @@ hr {
 }
 
 :root {
-  --button-pointer-distance: 1rem;
+  --button-spike-width: 1em;
   --button-border-width: 1px;
 }
 
 .button {
   border: 0;
-  background: none;
-  box-sizing: border-box;
-  text-decoration: none;
+  position: relative;
   display: inline-block;
+  padding: 1em 2em 0.8em;
   font-size: 0.8em;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-family: gothamnarrowmedium;
   line-height: 1.7;
   color: var(--color-eple);
-  padding: 1em 2em;
+  background: var(--color-eple);
+  clip-path: polygon(
+    50% 0%,
+    calc(100% - var(--button-spike-width)) 0,
+    100% 50%,
+    calc(100% - var(--button-spike-width)) 100%,
+    var(--button-spike-width) 100%,
+    0 50%,
+    var(--button-spike-width) 0
+  );
   -webkit-clip-path: polygon(
     50% 0%,
-    calc(100% - var(--button-pointer-distance)) 0,
+    calc(100% - var(--button-spike-width)) 0,
     100% 50%,
-    calc(100% - var(--button-pointer-distance)) 100%,
-    var(--button-pointer-distance) 100%,
+    calc(100% - var(--button-spike-width)) 100%,
+    var(--button-spike-width) 100%,
     0 50%,
-    var(--button-pointer-distance) 0
+    var(--button-spike-width) 0
   );
-          clip-path: polygon(
-    50% 0%,
-    calc(100% - var(--button-pointer-distance)) 0,
-    100% 50%,
-    calc(100% - var(--button-pointer-distance)) 100%,
-    var(--button-pointer-distance) 100%,
-    0 50%,
-    var(--button-pointer-distance) 0
-  );
-  background: var(--color-eple);
-  position: relative;
   transition: 250ms color;
+  cursor: pointer;
 }
 
 .button, .button a { text-decoration: none !important;
   }
 
 .button:before {
-    z-index: -1;
-    background: #fff;
-    transition: 250ms background;
-    content: '';
-    position: absolute;
-    width: calc(100% - calc(var(--button-border-width) * 2));
-    height: calc(100% - calc(var(--button-border-width) * 2));
-    top: var(--button-border-width);
-    left: var(--button-border-width);
-    -webkit-clip-path: polygon(
+  z-index: -1;
+  content: '';
+  position: absolute;
+  background: #fff;
+  transition: 250ms background;
+  width: calc(100% - calc(var(--button-border-width) * 2));
+  height: calc(100% - calc(var(--button-border-width) * 2));
+  top: var(--button-border-width);
+  left: var(--button-border-width);
+  clip-path: polygon(
       50% 0,
-      calc(100% - var(--button-pointer-distance) + calc(var(--button-border-width) / 2)) 0,
+      calc(100% - var(--button-spike-width) + calc(var(--button-border-width) / 2)) 0,
       100% 50%,
-      calc(100% - var(--button-pointer-distance)) calc(100% + var(--button-border-width)),
-      var(--button-pointer-distance) calc(100% + var(--button-border-width)),
+      calc(100% - var(--button-spike-width)) calc(100% + var(--button-border-width)),
+      var(--button-spike-width) calc(100% + var(--button-border-width)),
       0 50%,
-      var(--button-pointer-distance) calc(0px - var(--button-border-width))
+      var(--button-spike-width) calc(0px - var(--button-border-width))
     );
-            clip-path: polygon(
+  -webkit-clip-path: polygon(
       50% 0,
-      calc(100% - var(--button-pointer-distance) + calc(var(--button-border-width) / 2)) 0,
+      calc(100% - var(--button-spike-width) + calc(var(--button-border-width) / 2)) 0,
       100% 50%,
-      calc(100% - var(--button-pointer-distance)) calc(100% + var(--button-border-width)),
-      var(--button-pointer-distance) calc(100% + var(--button-border-width)),
+      calc(100% - var(--button-spike-width)) calc(100% + var(--button-border-width)),
+      var(--button-spike-width) calc(100% + var(--button-border-width)),
       0 50%,
-      var(--button-pointer-distance) calc(0px - var(--button-border-width))
+      var(--button-spike-width) calc(0px - var(--button-border-width))
     );
-  }
+}
 
 .bg-krem-light .button:before {
   background: var(--color-krem-light);
 }
 
 button.button:hover,
-a.button:hover {
+a.button:hover,
+.button-fill {
   color: #fff;
 }
 
-button.button:hover:before, a.button:hover:before {
+button.button:hover:before, a.button:hover:before, .button-fill:before {
     background: var(--color-eple);
+  }
+
+a.button-fill:hover,
+button.button-fill:hover {
+  color: var(--color-eple);
+}
+
+a.button-fill:hover:before, button.button-fill:hover:before {
+    background: #fff;
   }
 
 .button-arrow {
@@ -9218,7 +9226,7 @@ button.button:hover:before, a.button:hover:before {
     display: none;
   }
 
-.button-fill {
+.button-fill* {
   padding: 1em 1.5em;
   text-decoration: none;
   display: inline-block;
@@ -9232,7 +9240,7 @@ button.button:hover:before, a.button:hover:before {
   border: 1px solid currentColor;
 }
 
-.button-fill, .button-fill a { text-decoration: none !important;
+.button-fill*, .button-fill* a { text-decoration: none !important;
   }
 
 .wysiwyg a {

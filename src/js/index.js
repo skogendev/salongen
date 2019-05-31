@@ -40,10 +40,9 @@ document.querySelector('.js-show-nav').addEventListener('click',function(){
 function init(){
   var calendarOpen = document.querySelectorAll('.c-calendar');
   flatpickr(calendarOpen, {
-    'dateFormat': 'j. F',
     'locale': Norwegian,
     'minDate': 'today',
-    'enableTime': true,
+    'dateFormat': 'j. F'
   });
 
   var calendarInline = document.querySelectorAll('.c-calendar-inline');

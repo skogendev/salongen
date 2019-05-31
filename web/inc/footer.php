@@ -31,7 +31,10 @@
         </div>
       </div>
       <div class="col-12 lg:col-2 lg:col-off-0 wysiwyg text-sm opacity-50">
-        <p>Visuell identitet: <a href="#">Blake</a><br>Webdesign og kode: <a href="#">Skogen</a></p>
+        <p>Visuell identitet: <a href="#">Blake</a><br>
+          Webdesign og kode: <a href="#">Skogen</a><br>
+          Umbraco CMS: <a href="#">Codewise</a>
+        </p>
       </div>
       <div class="col-12 lg:col-3 lg:col-off-1 wysiwyg text-sm opacity-50">
         <p>Foto forside: <a href="#">Catharina Caprino</a><br>Foto interiør og mennesker: <a href="#">Navn</a></p>
