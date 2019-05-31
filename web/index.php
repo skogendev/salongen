@@ -22,7 +22,6 @@
 
   <?php include('components/contact.php') ?>
 
-
   <?php include('inc/footer.php') ?>
 
 </div>

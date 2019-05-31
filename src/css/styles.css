@@ -146,7 +146,9 @@ hr {
 
 :root {
   --button-pointer-distance: 1rem;
+  --button-border-width: 1px;
 }
+
 .button {
   border: 0;
   background: none;
@@ -156,7 +158,15 @@ hr {
   @apply .heading-sm;
   color: var(--color-eple);
   padding: 1em 2em;
-  clip-path: polygon(50% 0%, calc(100% - var(--button-pointer-distance)) 0, 100% 50%, calc(100% - var(--button-pointer-distance)) 100%, var(--button-pointer-distance) 100%, 0 50%, var(--button-pointer-distance) 0);
+  clip-path: polygon(
+    50% 0%,
+    calc(100% - var(--button-pointer-distance)) 0,
+    100% 50%,
+    calc(100% - var(--button-pointer-distance)) 100%,
+    var(--button-pointer-distance) 100%,
+    0 50%,
+    var(--button-pointer-distance) 0
+  );
   background: var(--color-eple);
   position: relative;
   transition: 250ms color;
@@ -166,11 +176,19 @@ hr {
     transition: 250ms background;
     content: '';
     position: absolute;
-    width: calc(100% - 2px);
-    height: calc(100% - 2px);
-    top: 1px;
-    left: 1px;
-    clip-path: polygon(50% 0, calc(100% - var(--button-pointer-distance) + 1px) 0, calc(100% - 0px) 50%, calc(100% - calc(var(--button-pointer-distance) + 0px)) calc(100% + 1px), var(--button-pointer-distance) calc(100% + 1px), 0 50%, var(--button-pointer-distance) -1px);
+    width: calc(100% - calc(var(--button-border-width) * 2));
+    height: calc(100% - calc(var(--button-border-width) * 2));
+    top: var(--button-border-width);
+    left: var(--button-border-width);
+    clip-path: polygon(
+      50% 0,
+      calc(100% - var(--button-pointer-distance) + calc(var(--button-border-width) / 2)) 0,
+      100% 50%,
+      calc(100% - var(--button-pointer-distance)) calc(100% + var(--button-border-width)),
+      var(--button-pointer-distance) calc(100% + var(--button-border-width)),
+      0 50%,
+      var(--button-pointer-distance) calc(0px - var(--button-border-width))
+    );
   }
 }
 
@@ -844,4 +862,74 @@ table {
 
 .gradient-bottom {
   background: linear-gradient(0deg, rgba(48,54,38,1) 0%, rgba(48,54,38,0) 100%);
+}
+
+
+.button2 {
+  padding: 0 1em;
+  text-align: center;
+  display: inline-block;
+  border-style: solid;
+  border-width: 16px;
+  border-color: var(--color-eple);
+  border-image: url('/assets/ui/border-image.svg') 15;
+  @apply .heading-sm;
+  text-decoration: none;
+  color: var(--color-eple);
+}
+
+.button3 {
+  @apply .heading-sm;
+  text-decoration: none;
+  color: var(--color-eple);
+  position: relative;
+  display: inline-block;
+  padding: 1em 2em;
+  &:before,
+  &:after {
+    content: '';
+    background: url(/assets/ui/border-image-2.svg);
+    background-size: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50%;
+    display: block;
+  }
+}
+
+.button4 {
+  @apply .heading-sm;
+  text-decoration: none;
+  color: var(--color-eple);
+  position: relative;
+  display: inline-block;
+  padding: 1em 0;
+  border: 1px solid var(--color-eple);
+  border-left: 0;
+  border-right: 0;
+  margin: 0 10rem;
+  position: relative;
+  background: #fff;
+  &:before {
+    content: '';
+    width: 10em;
+    height: 10em;
+    position: absolute;
+    left: 2px;
+    top: calc(50% - 1px);
+    transform: translateY(-50%) rotate(45deg);
+    transform-origin: center;
+    display: inline-block;
+    border: 1px solid var(--color-eple);
+    z-index: -1;
+    background: #fff;
+  }
+}
+
+.button-container {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
 }
