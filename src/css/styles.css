@@ -25,6 +25,7 @@
 
   /* SPACING */
   --padding: 1.25rem;
+  --container-margin-sm: 2rem;
   --container-margin: 7rem;
   --container-max-width: 100rem;
 
@@ -504,7 +505,7 @@ button.button-fill:hover {
   max-width: var(--container-max-width);
   margin-left: auto;
   margin-right: auto;
-  padding: var(--padding);
+  padding: var(--container-margin-sm);
   transform: translateY(-100%);
   @screen lg {
     padding-left: calc(var(--container-margin) / 2);
@@ -527,7 +528,7 @@ button.button-fill:hover {
 }
 
 .main-header__inner {
-  padding: var(--padding);
+  padding: var(--padding) var(--container-margin-sm);
   border: 1px solid var(--color-krem);
   background: #fff;
   @screen lg {
@@ -561,8 +562,8 @@ button.button-fill:hover {
 .container {
   max-width: var(--container-max-width);
   margin: 0 auto;
-  padding-left: var(--padding);
-  padding-right: var(--padding);
+  padding-left: var(--container-margin-sm);
+  padding-right: var(--container-margin-sm);
   @screen lg {
     padding-left: var(--container-margin);
     padding-right: var(--container-margin);
