@@ -681,6 +681,9 @@ table {
 
 .sticky-image {
   transform: translate(var(--invert-sticky-x),var(--invert-sticky-y));
+  &.reverse {
+    transform: translate(calc(0em - var(--invert-sticky-x)), calc(0em - var(--invert-sticky-y)));
+  }
 }
 
 .lazyload-img {

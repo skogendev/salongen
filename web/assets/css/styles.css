@@ -9757,6 +9757,11 @@ table {
           transform: translate(var(--invert-sticky-x),var(--invert-sticky-y));
 }
 
+.sticky-image.reverse {
+    -webkit-transform: translate(calc(0em - var(--invert-sticky-x)), calc(0em - var(--invert-sticky-y)));
+            transform: translate(calc(0em - var(--invert-sticky-x)), calc(0em - var(--invert-sticky-y)));
+  }
+
 .lazyload-img {
   -webkit-transform: scale(1.25);
           transform: scale(1.25);
