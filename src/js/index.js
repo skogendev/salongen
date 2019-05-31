@@ -473,7 +473,7 @@ window.setCorrectingInterval = ( function( func, delay ) {
 
 
 var startTime = Date.now();
-/*
+
 setCorrectingInterval(function(){
   $tickerElements[currentTicker].classList.remove('active');
   currentTicker++;
@@ -485,4 +485,3 @@ setCorrectingInterval(function(){
 
 
 }, 4000)
-*/
