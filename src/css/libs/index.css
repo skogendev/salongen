@@ -6,6 +6,28 @@
 }
 
 .swiper-slide {
-  width: 40vw !important;
-  margin-right: 10vw !important;
+  width: 80vw !important;
+  margin-right: 6% !important;
+  @screen lg {
+    width: 22.5% !important;
+    margin-right: var(--gutter-x-desktop) !important;
+    margin-right: 6% !important;
+  }
+
+}
+
+.swiper-prev svg,
+.swiper-next svg {
+  width: 75%;
+  height: 75%;
+  @screen lg {
+    width: 100%;
+    height: 100%;
+
+  }
+}
+
+.swiper-button-disabled path,
+.swiper-button-disabled circle {
+  stroke: var(--color-krem);
 }

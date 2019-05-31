@@ -7,7 +7,7 @@
         <blockquote class="mb-8">
           <p>Salongen er et personlig og inspirerende konferansehus med et stort hjerte for å skreddersy arrangementer av høy kvalitet. Salongen har møterom og fasiliteter som passer fint for både små møter og større arrangementer. </p>
         </blockquote>
-        <a href="#" class="button">Se mer</a>
+        <a href="/artikkel.php" class="button">Se mer</a>
       </div>
       <div class="col-12 lg:col-5 xl:col-5 ">
         <div class="overflow-hidden">

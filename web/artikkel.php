@@ -54,7 +54,7 @@
     </div>
   </div>
 
-  <?php include('components/testimonials.php') ?>
+  <?php include('components/slideshow.php') ?>
 
   <div class="section">
     <div class="container">
@@ -68,10 +68,10 @@
 
   <?php include('components/split-cta.php') ?>
 
+  <?php include('inc/footer.php') ?>
 
 </div>
 
-<?php include('inc/footer.php') ?>
 
 </body>
 </html>

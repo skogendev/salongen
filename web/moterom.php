@@ -10,6 +10,7 @@
 <div class="main-content" data-barba="container" data-barba-namespace="home">
 
   <?php
+    $subtitle = 'Møterom';
     $title = 'Våre møterom';
     $includeButtons = false;
     include('components/page-intro.php');

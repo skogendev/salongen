@@ -42,8 +42,8 @@
 
 
             <div class="js-load-stagger mt-8">
-              <a href="#" class="button">Book møterom</a>
-              <a href="#" class="button">Book konferanse</a>
+              <a href="/moterom.php" class="button">Book møterom</a>
+              <a href="/konferanse.php" class="button">Book konferanse</a>
             </div>
       </div>
     </div>

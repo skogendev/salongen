@@ -22,8 +22,8 @@
           Nærmeste holdeplass: <a href="#">Tinghuset</a></p>
       </div>
       <div class="col-12 lg:col-4 lg:text-right  mb-8 lg:mt-0">
-        <a href="#" class="button mb-4">Book møterom</a><br>
-        <a href="#" class="button">Book konferanse</a>
+        <a href="/moterom.php" class="button mb-4">Book møterom</a><br>
+        <a href="/konferanse.php" class="button">Book konferanse</a>
       </div>
       <div class="col-12 lg:col-3 lg:col-off-2 wysiwyg text-sm opacity-50">
         <div class="pr-8">

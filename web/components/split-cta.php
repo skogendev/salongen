@@ -8,7 +8,7 @@
             <h2 class="heading-lg">Book ditt neste arrangement hos oss</h2>
             <hr class="hr mx-0">
               <p>Salongen er et personlig og inspirerende konferansehus med et stort hjerte for å skreddersy arrangementer av høy kvalitet. Salongen har møterom og fasiliteter som passer fint for både små møter og større arrangementer. </p>
-              <a href="#" class="button mt-4">Les mer om konferanse</a>
+              <a href="/konferanse.php" class="button mt-4">Les mer om konferanse</a>
           </div>
         </div>
         <div class="col-10 lg:col-5 xl:col-5 xl:col-off-2">
