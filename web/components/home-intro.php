@@ -52,7 +52,7 @@
     <div class="u-flexgrid-g " style="min-height: 90vh">
       <div class="col-12 lg:col-8 xl:col-off-2 xl:col-4 text-left pt-32">
         <h1 class="heading-xl mb-8 js-load-stagger pt-20">
-          Det personlige konferansehuset du har ventet på
+          Det personlige  konferansehuset du har ventet på
         </h1>
 
 
