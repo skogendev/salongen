@@ -29,11 +29,17 @@
 		<div class="lg:hidden">
 			<button class="js-show-nav p-0 border-0 bg-transparent">
 				<svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<circle cx="17" cy="17" r="16.5" stroke="#D47366"/>
-				<path d="M9.18919 11.946H25.2703" stroke="#D47366"/>
-				<path d="M9.18919 16.5406H25.2703" stroke="#D47366"/>
-				<path d="M9.18919 21.1352H25.2703" stroke="#D47366"/>
+					<circle cx="17" cy="17" r="16.5" stroke="#D47366"/>
+					<path d="M9.18919 11.946H25.2703" stroke="#D47366"/>
+					<path d="M9.18919 16.5406H25.2703" stroke="#D47366"/>
+					<path d="M9.18919 21.1352H25.2703" stroke="#D47366"/>
 				</svg>
+				<svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M17 33.5C26.1127 33.5 33.5 26.1127 33.5 17C33.5 7.8873 26.1127 0.5 17 0.5C7.8873 0.5 0.5 7.8873 0.5 17C0.5 26.1127 7.8873 33.5 17 33.5Z" stroke="#D47366"/>
+					<path d="M11.3101 11.3101L22.6801 22.6801" stroke="#D47366"/>
+					<path d="M11.3101 22.6899L22.6801 11.3199" stroke="#D47366"/>
+				</svg>
+
 			</button>
 		</div>
 		<nav class="w-1/2 main-nav heading-sm hidden lg:flex  justify-center js-show-nav-element main-header-border py-4 items-center">

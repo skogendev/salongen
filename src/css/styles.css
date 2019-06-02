@@ -19,14 +19,14 @@
   --bg-color: #fff;
   --color: var(--color-skog);
 
-  /* TYPOGRAPHY */
+  /* TYPOGRAPHY */ 
   --font-family: gothamnarrow;
   --font-serif: bluu;
 
   /* SPACING */
   --padding: 1.25rem;
   --container-margin-sm: 2rem;
-  --container-margin: 7rem;
+  --container-margin: 5rem;
   --container-max-width: 100rem;
 
   /* GRID */
@@ -281,7 +281,44 @@ button.button-fill:hover {
   @apply .heading-sm;
   color: #fff;
   background: var(--color-skog);
-  border: 1px solid currentColor;
+  border: 1px solid var(--color-skog);
+}
+
+.button-normal {
+  padding: 1em 1.5em;
+  text-decoration: none;
+  display: inline-block;
+  @apply .heading-sm;
+  border: 1px solid var(--color-krem);
+  appearance: none;
+  border-radius: 0;
+}
+
+.button-eple {
+  background: var(--color-eple);
+  border-color: var(--color-eple);
+  color: #fff;
+  cursor: pointer;
+  &:disabled {
+    cursor: not-allowed;
+    &:hover:after {
+      content: 'Velg dato og tidspunkt først';
+      position: absolute;
+      color: var(--color-skog);
+      bottom: -2.5em;
+      left: 0;
+      width: 100%;
+      text-align: right;
+    }
+  }
+}
+
+.border-t-0 {
+  border-top: 0;
+}
+
+.border-r-0 {
+  border-right: 0;
 }
 
 .wysiwyg a {
@@ -543,7 +580,8 @@ button.button-fill:hover {
 }
 .logo-svg {
   fill: var(--color-skog);
-  width: 8.5rem;
+  width: 9.5rem;
+  height: 2.5rem;
 }
 
 /* Navigation */
@@ -574,6 +612,16 @@ button.button-fill:hover {
   height: 30rem;
   overflow: hidden;
   position: relative;
+  &:hover .ref-box__inner .heading-md {
+    color: var(--color-eple);
+  }
+}
+
+.ref-box__inner {
+  background: #fff;
+  & .heading-md {
+    transition: .3s color;
+  }
 }
 
 .icon {
@@ -744,7 +792,6 @@ table {
 }
 
 .hover-img-scale {
-
   &:hover img {
     transform: scale(1.1);
   }
@@ -757,12 +804,22 @@ table {
   }
 }
 
+
+
 .c-calendar-inline {
   opacity: 0;
   transition: .5s opacity;
   &.js-active {
     opacity: 1;
   }
+
+
+}
+
+.c-calendar {
+  background: #fff url(/assets/svg/calendar.svg) no-repeat;
+  background-position: 1.5em 1em;
+  padding-left: 4em;
 }
 
 .form {
@@ -975,4 +1032,44 @@ table {
 
 .swiper-wrapper {
   height: auto;
+}
+
+.js-show-nav {
+  & svg:nth-child(2) {
+    display: none;
+  }
+  &.active svg:nth-child(1) {
+    display: none;
+  }
+  &.active svg:nth-child(2) {
+    display: inline-block;
+  }
+}
+
+option[value=""][disabled] {
+  display: none;
+}
+
+.form-meeting-rooms {
+  width: 100%;
+  max-width: 22rem;
+}
+
+
+.meeting-room-disabled {
+  & .img {
+    & img {
+      opacity: 0.5;
+    }
+    position: relative;
+    &:after {
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #000;
+      content: '';
+      position: absolute;
+    }
+  }
 }

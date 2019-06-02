@@ -36,6 +36,8 @@ document.querySelector('.js-show-nav').addEventListener('click',function(){
   }
 });
 
+
+
 // Kalender
 function init(){
   var calendarOpen = document.querySelectorAll('.c-calendar');
@@ -405,10 +407,20 @@ Barba.init({
       // do something with `current.container` for your leave transition
       // then return a promise or use `this.async()`
       document.body.classList.remove('js-transition-ready');
+
+
     },
     afterLeave(){
       document.body.classList.remove('js-transition-ready');
       window.scrollTo(0,0);
+      function closeNav(){
+        var $elementsToClose = document.querySelectorAll('.js-show-nav-element');
+        $elementsToClose.forEach(function(el){
+          el.classList.add('hidden');
+        });
+        document.querySelector('.js-show-nav').classList.remove('active');
+      }
+      closeNav();
     },
     enter({ current, next, trigger }) {
       // do something with `next.container` for your enter transition
@@ -433,6 +445,20 @@ var headroom  = new Headroom(mainHeader, {
 });
 headroom.init();
 
+
+document.querySelectorAll('.js-meeting-rooms-check').forEach(function(meetingRoomEl){
+  meetingRoomEl.addEventListener('change',function(){
+    var inputsHaveValue = 0;
+    document.querySelectorAll('.js-meeting-rooms-check').forEach(function(meetingRoomElInside){
+      if (meetingRoomElInside.value.length > 0) {
+        inputsHaveValue++;
+      }
+    });
+    if (inputsHaveValue >= 3) {
+      document.querySelector('.js-meeting-rooms-button').disabled = false;
+    }
+  })
+})
 
 
 

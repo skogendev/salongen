@@ -55,7 +55,7 @@ function css(done) {
     .pipe(postcss([
       postcssimport(),
       postcssfor(),
-      tailwindcss('tailwind.js'),
+      tailwindcss('./tailwind.config.js'),
       postcssNesting(),
       require('autoprefixer')
     ]))

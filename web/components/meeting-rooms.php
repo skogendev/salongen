@@ -19,9 +19,9 @@
           </div>
         </div>
       </a>
-      <a href="/lunden.php" class="col-12 mb-4 lg:mb-0 lg:col-6 xl:col-4 no-underline hover-img-scale">
+      <a href="/lunden.php" class="col-12 mb-4 lg:mb-0 lg:col-6 xl:col-4 no-underline hover-img-scale meeting-room-disabled">
         <div class="border-primary hover-border-eple">
-          <div class="overflow-hidden"><img data-src="/assets/img/tmp11.jpg" class="lazyload-img lazyload"></div>
+          <div class="overflow-hidden img"><img data-src="/assets/img/tmp11.jpg" class="lazyload-img lazyload"></div>
           <div class="p-6 xl:p-8 flex items-center justify-between">
             <div class="heading-md">Carl Johan</div>
             <div class="heading-sm text-eple">4-12 pers</div>

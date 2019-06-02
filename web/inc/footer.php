@@ -1,11 +1,11 @@
 
-<footer class="section bg-krem-light">
+<footer class="main-footer section bg-krem-light">
   <div class="container">
     <div class="u-flexgrid-g">
-      <div class="col-6 lg:col-2">
+      <div class="col-6 lg:col-2 order">
         <img src="/assets/svg/logo-med-runding.svg" class="w-2/3">
       </div>
-      <div class="col-6 lg:col-3">
+      <div class="col-6 lg:col-3 order">
         <ul class="list-none p-0 heading-sm no-underline">
           <li class="hidden"><a href="/"<?php if ($activePage == 'index') { echo ' class="active"'; } ?>>00 Hjem</a></li>
           <li class="mb-2"><a href="/konferanse.php"<?php if ($activePage == 'konferanse') { echo ' class="active"'; } ?>><span class="text-eple">01</span> Konferanse</a></li>
@@ -14,14 +14,14 @@
           <li class="mb-2"><a href="/kontakt.php" <?php if ($activePage == 'kontakt') { echo ' class="active"'; } ?>><span class="text-eple">04</span> Kontakt</a></li>
         </ul>
       </div>
-      <div class="col-12 lg:col-3 text-sm wysiwyg mt-8 mb-2 lg:mt-0">
+      <div class="col-12 lg:col-3 text-sm wysiwyg lg:mt-0 order">
         <p><a href="#">Ibsenkvartalet<br>
           C.J. Hambros plass 2</a></p>
 
         <p>Nærmeste parkering: <a href="#">Sentrum P-hus</a><br>
           Nærmeste holdeplass: <a href="#">Tinghuset</a></p>
       </div>
-      <div class="col-12 lg:col-4 lg:text-right  mb-8 lg:mt-0">
+      <div class="col-12 lg:col-4 lg:text-right mt-8 mb-8 lg:mt-0 order">
         <a href="/moterom.php" class="button mb-4">Book møterom</a><br>
         <a href="/konferanse.php" class="button">Book konferanse</a>
       </div>

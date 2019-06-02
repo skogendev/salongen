@@ -2,14 +2,14 @@
   <div class="section">
     <div class="container">
       <div class="u-flexgrid-g justify-center text-center">
-        <div class="col-10 lg:col-5 xl:col-4">
+        <div class="col-10 lg:col-8 xl:col-6 xxl:col-5">
           <div class="heading-sm text-eple mb-4">Kontakt</div>
           <h2 class="heading-lg">Ta kontakt med oss, for dine ønsker</h2>
           <hr class="hr">
             <p>Salongen er et personlig og inspirerende konferansehus med et stort hjerte for å skreddersy arrangementer av høy kvalitet. Salongen har møterom og fasiliteter som passer fint for både små møter og større arrangementer. </p>
         </div>
       </div>
-      <ul class="u-flexgrid-g list-none">
+      <ul class="u-flexgrid-g list-none p-0">
         <li class="col-12 xl:col-4">
           <div class="border-primary">
             <div class="relative">

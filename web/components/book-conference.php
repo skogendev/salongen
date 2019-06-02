@@ -64,9 +64,27 @@
             </div>
             <div class="js-step hidden">
               <div class="p-8 border-primary">
-                <div class="text-center">
+                <div class="text-center mb-8">
                   <p>Mange takk for din forespørsel! Du hører fra oss så snart vi har behandlet din henvendelse. Hvis du har noen spørsmål i mellomtiden, ikke nøl med å kontakte oss!</p>
                 </div>
+                <div class="flex mb-8 items-center">
+                  <img src="http://unsplash.it/500/500" class="w-1/3 rounded full">
+                  <div class="w-2/3">
+                    <div class="heading-md mb-1">Annica Andersson</div>
+                    <div class="text-krem">Salongmajorette</div>
+                  </div>
+                </div>
+
+                <table>
+                  <tr>
+                    <td class="heading-sm text-eple w-1/3">Telefon</td>
+                    <td>499 49 313</td>
+                  </tr>
+                  <tr>
+                    <td class="heading-sm text-eple w-1/3">Epost</td>
+                    <td>annica@salongenkonferanse.no</td>
+                  </tr>
+                </table>
               </div>
             </div>
           </div>
