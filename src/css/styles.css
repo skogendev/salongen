@@ -19,7 +19,7 @@
   --bg-color: #fff;
   --color: var(--color-skog);
 
-  /* TYPOGRAPHY */ 
+  /* TYPOGRAPHY */
   --font-family: gothamnarrow;
   --font-serif: bluu;
 
@@ -960,69 +960,6 @@ table {
   background: linear-gradient(0deg, rgba(48,54,38,1) 0%, rgba(48,54,38,0) 100%);
 }
 
-
-.button2 {
-  padding: 0 1em;
-  text-align: center;
-  display: inline-block;
-  border-style: solid;
-  border-width: 16px;
-  border-color: var(--color-eple);
-  border-image: url('/assets/ui/border-image.svg') 15;
-  @apply .heading-sm;
-  text-decoration: none;
-  color: var(--color-eple);
-}
-
-.button3 {
-  @apply .heading-sm;
-  text-decoration: none;
-  color: var(--color-eple);
-  position: relative;
-  display: inline-block;
-  padding: 1em 2em;
-  &:before,
-  &:after {
-    content: '';
-    background: url(/assets/ui/border-image-2.svg);
-    background-size: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: 50%;
-    display: block;
-  }
-}
-
-.button4 {
-  @apply .heading-sm;
-  text-decoration: none;
-  color: var(--color-eple);
-  position: relative;
-  display: inline-block;
-  padding: 1em 0;
-  border: 1px solid var(--color-eple);
-  border-left: 0;
-  border-right: 0;
-  margin: 0 10rem;
-  position: relative;
-  background: #fff;
-  &:before {
-    content: '';
-    width: 10em;
-    height: 10em;
-    position: absolute;
-    left: 2px;
-    top: calc(50% - 1px);
-    transform: translateY(-50%) rotate(45deg);
-    transform-origin: center;
-    display: inline-block;
-    border: 1px solid var(--color-eple);
-    z-index: -1;
-    background: #fff;
-  }
-}
 
 .button-container {
   position: relative;
