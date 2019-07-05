@@ -10268,6 +10268,7 @@ option[value=""][disabled] {
 
   .page .front-first-img {
     height: 30%;
+    display: none;
   }
 
   .front-first-txt {
