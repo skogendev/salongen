@@ -464,6 +464,22 @@ document.querySelectorAll('.js-meeting-rooms-check').forEach(function(meetingRoo
 
 
 // Ticker
+
+var mySwiper = new Swiper ('.ticker-wrapper', {
+
+    loop: true,
+    slidesPerView: 1,
+    slidesPerGroup: 1,
+    direction: 'vertical',
+    autoplay: {
+      delay: 10000,
+    },
+    slideClass: 'ticker-slide'
+
+  });
+
+
+/*
 var $ticker = document.querySelector('.ticker');
 var $tickerElements = $ticker.querySelectorAll('li');
 var currentTicker = 0;
@@ -511,3 +527,5 @@ setCorrectingInterval(function(){
 
 
 }, 4000)
+
+*/

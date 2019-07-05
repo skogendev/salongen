@@ -486,6 +486,9 @@ button.button-fill:hover {
 .heading-xl {
   font-size: 2em;
   @screen lg {
+    font-size: 3em;
+  }
+  @screen xxl {
     font-size: 3.5em;
   }
   font-family: var(--font-serif);
@@ -882,11 +885,16 @@ table {
 }
 
 
-.ticker-wrapper {
+.ticker-wrapper* {
   height: 100%;
 }
 
-.ticker {
+.ticker li {
+  height: 1em;
+}
+
+.ticker* {
+  will-change: transform;
   --animation-delay: 4s;
   list-style: none;
   position: relative;
@@ -900,6 +908,7 @@ table {
     animation-play-state: paused;
     animation-fill-mode: forwards;
     opacity: 0;
+    will-change: transform;
 
   }
   & li.active {
@@ -910,6 +919,11 @@ table {
     max-height: 75%;
     width: auto;
   }
+}
+
+.ticker img {
+  max-height: 75%;
+  width: auto;
 }
 
 @keyframes ticker {

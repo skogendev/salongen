@@ -15,15 +15,15 @@
 					</svg>
 				</a>
 			</div>
-			<div class="font-serif hidden lg:block main-header-border text-center w-full text-eple">
-				<div class="ticker-wrapper lg:py-10 h-full overflow-hidden">
-					<ul class="ticker list-reset">
-						<li>Snakkes snart, da!</li>
-						<li><img src="/assets/svg/emblem.svg"></li>
-						<li>Velkommen hit!</li>
-						<li><img src="/assets/svg/emblem.svg"></li>
+			<div class="font-serif ticker hidden lg:block main-header-border text-center w-full text-eple">
+				<img src="/assets/svg/emblem.svg" class="p-4">
+				<!--<div class="ticker-wrapper swiper-container lg:py-10 h-full overflow-hidden">
+					<ul class="ticker swiper-wrapper list-reset">
+						<li class="ticker-slide">Snakkes snart, da!</li>
+						<li class="ticker-slide">Velkommen hit!</li>
 					</ul>
-				</div>
+
+				</div>-->
 			</div>
 		</div>
 		<div class="lg:hidden">
@@ -39,7 +39,6 @@
 					<path d="M11.3101 11.3101L22.6801 22.6801" stroke="#D47366"/>
 					<path d="M11.3101 22.6899L22.6801 11.3199" stroke="#D47366"/>
 				</svg>
-
 			</button>
 		</div>
 		<nav class="w-1/2 main-nav heading-sm hidden lg:flex  justify-center js-show-nav-element main-header-border py-4 items-center">

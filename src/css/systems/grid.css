@@ -1,4 +1,5 @@
-[class*="u-flexgrid"] {
+
+  [class*="u-flexgrid"] {
   @apply .flex .flex-wrap;
   & > [class*="col-"] {
     @apply .flex-1;
@@ -12,6 +13,7 @@
 
   }
 }
+
 
 .u-flexgrid-g,
 .u-flexgrid-gx {

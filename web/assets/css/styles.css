@@ -9543,6 +9543,13 @@ a.button-fill:hover:before, button.button-fill:hover:before {
 @media (min-width: 1024px) {
 
 .heading-xl {
+    font-size: 3em;
+}
+  }
+
+@media (min-width: 1500px) {
+
+.heading-xl {
     font-size: 3.5em;
 }
   }
@@ -10045,17 +10052,22 @@ table {
   transition: .5s transform;
 }
 
-.ticker-wrapper {
+.ticker-wrapper* {
   height: 100%;
 }
 
-.ticker {
+.ticker li {
+  height: 1em;
+}
+
+.ticker* {
+  will-change: transform;
   --animation-delay: 4s;
   list-style: none;
   position: relative;
 }
 
-.ticker li {
+.ticker* li {
     position: absolute;
     width: 100%;
     top: 50%;
@@ -10069,17 +10081,23 @@ table {
     -webkit-animation-fill-mode: forwards;
             animation-fill-mode: forwards;
     opacity: 0;
+    will-change: transform;
   }
 
-.ticker li.active {
+.ticker* li.active {
     -webkit-animation-play-state: running;
             animation-play-state: running;
   }
 
-.ticker img {
+.ticker* img {
     max-height: 75%;
     width: auto;
   }
+
+.ticker img {
+  max-height: 75%;
+  width: auto;
+}
 
 @-webkit-keyframes ticker {
   0% { -webkit-transform: translate(-50%,-5rem); transform: translate(-50%,-5rem); opacity: 0;
