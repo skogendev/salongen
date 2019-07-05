@@ -10237,6 +10237,18 @@ option[value=""][disabled] {
 }
   }
 
+@media (min-width: 1024px) {
+
+.page .front-img-1 {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+
+    -webkit-transform-origin: center right;
+
+            transform-origin: center right
+}
+  }
+
 @media all and (max-width: 1024px) {
   .front-first-img {
     height: 50%;
@@ -10253,6 +10265,10 @@ option[value=""][disabled] {
       -o-object-fit: cover;
          object-fit: cover;
     }
+
+  .page .front-first-img {
+    height: 30%;
+  }
 
   .front-first-txt {
     height: 50%;

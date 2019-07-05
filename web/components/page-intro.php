@@ -1,8 +1,8 @@
-<div class="section bg-krem-light py-0" style="padding: 0;">
+<div class="section page bg-krem-light py-0" style="padding: 0;">
   <div class="h-full overflow-hidden absolute w-full">
     <div class="absolute container w-full pin-l u-flexgrid-g" style="min-height: 70vh">
-      <div class="col-3">
-        <div class="overflow-hidden relative" style="transform: scale(2); transform-origin: center right;">
+      <div class="col-12 lg:col-3 front-first-img">
+        <div class="overflow-hidden relative front-img-1">
           <div class="overflow-hidden">
             <div class="sticky-image">
               <img data-src="/assets/img/tmp4.jpg" class="inview lazyload-img lazyload">
@@ -11,7 +11,7 @@
         </div>
       </div>
       <div class="col-4 col-off-4">
-        <div class="-mt-12">
+        <div class="-mt-12 hidden lg:block">
           <div class="overflow-hidden">
             <div class="sticky-image">
               <img src="/assets/img/tmp5.jpg" class="inview -mt-32 lazyload-img lazyload">
@@ -21,7 +21,7 @@
       </div>
       <div class="col-12"></div>
       <div class="col-2 mt-64">
-        <div class="overflow-hidden">
+        <div class="overflow-hidden hidden lg:block">
           <div class="sticky-image">
             <img src="/assets/img/tmp7.jpg" class="inview mt-8 lazyload-img lazyload">
           </div>
@@ -29,7 +29,7 @@
       </div>
       <div class="col-2 col-off-8 mt-64">
         <div style="transform: scale(2); transform-origin: bottom left;">
-          <div class="overflow-hidden">
+          <div class="overflow-hidden hidden lg:block">
             <div class="sticky-image">
               <img src="/assets/img/tmp1.jpg" class="inview lazyload-img lazyload">
             </div>

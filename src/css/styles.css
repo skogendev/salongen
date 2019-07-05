@@ -1031,6 +1031,12 @@ option[value=""][disabled] {
     transform-origin: bottom right;
   }
 }
+.page .front-img-1 {
+  @screen lg {
+    transform: scale(2);
+    transform-origin: center right;
+  }
+}
 
 @media all and (max-width: 1024px) {
   .front-first-img {
@@ -1047,6 +1053,9 @@ option[value=""][disabled] {
       object-fit: cover;
     }
   }
+  .page .front-first-img {
+    height: 30%;
+  }
   .front-first-txt {
     height: 50%;
     width: 100%;
@@ -1060,4 +1069,5 @@ option[value=""][disabled] {
     top: 50%;
     transform: translateY(-60%);
   }
+
 }
