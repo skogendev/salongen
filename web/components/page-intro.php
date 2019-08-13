@@ -1,6 +1,6 @@
 <div class="section page bg-krem-light py-0" style="padding: 0;">
   <div class="h-full overflow-hidden absolute w-full">
-    <div class="absolute container w-full pin-l u-flexgrid-g" style="min-height: 70vh">
+    <div class="absolute container w-full pin-l u-flexgrid-g c-intro-min-height">
       <div class="col-12 lg:col-3 front-first-img">
         <div class="overflow-hidden relative front-img-1">
           <div class="overflow-hidden">
@@ -39,7 +39,7 @@
     </div>
   </div>
   <div class="container bg-segl relative">
-    <div class="u-flexgrid-g justify-center items-center" style="min-height: 70vh">
+    <div class="u-flexgrid-g justify-center items-center c-intro-min-height">
       <div class="col-12 lg:col-8 xl:col-6 text-center pt-32">
         <div class="heading-sm text-eple js-load-stagger"><?php echo $subtitle ?></div>
         <hr class="hr-small mt-3 js-load-stagger">

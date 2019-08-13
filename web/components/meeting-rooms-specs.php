@@ -29,10 +29,8 @@
 			</div>
 			<div class="col-12 lg:col-5 wysiwyg">
 				<h2 class="heading-lg">Se tilgjengelighet</h2>
-				<fieldset class="button">
-					<input class="c-calendar" type="text" placeholder="Velg en dato" value="2019-05-23T00:00:00.000Z" readonly="readonly">
-				</fieldset>
-				<button class="button">Sjekk</button>
+				<input class="c-calendar button-normal" type="text" placeholder="Velg en dato" value="" readonly="readonly">
+				<button class="button-normal">Sjekk</button>
 				<table class="table-book">
 					<tbody>
 						<tr>
@@ -96,7 +94,7 @@
 						<p>Velg ledige tidspunkt, og gå videre ved å trykke på book.</p>
 					</div>
 					<div class="w-1/2 text-right">
-						<button class="button">Book</button>
+						<button class="button-normal">Book</button>
 					</div>
 				</div>
 			</div>

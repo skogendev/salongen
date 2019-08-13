@@ -1,6 +1,6 @@
 <div class="section bg-krem-light py-0" style="padding: 0;">
   <div class="h-full overflow-hidden absolute w-full mx-auto">
-    <div class="container w-full pin-l  items-end u-flexgrid-g" style="min-height: 90vh">
+    <div class="container w-full pin-l  items-end u-flexgrid-g c-intro-min-height">
       <div class="col-12 lg:col-1 front-first-img">
         <div class="front-img-1">
           <div class="overflow-hidden relative">
@@ -41,11 +41,12 @@
     </div>
   </div>
   <div class="container bg-segl relative">
-    <div class="u-flexgrid-g " style="min-height: 90vh">
+    <div class="u-flexgrid-g c-intro-min-height">
       <div class="col-12 lg:col-off-1 lg:col-6 lg:col-off-2 lg:col-5 text-left lg:pt-24 front-first-txt">
         <div class="front-first-txt__inner px-10">
           <h1 class="heading-xl mb-8 js-load-stagger lg:pt-20">
-            Det personlige  konferansehuset du har ventet på
+          Velkommen til Salongen<br>&mdash; det personlige konferansehuset
+
           </h1>
           <div class="js-load-stagger mt-8">
             <a href="/moterom.php" class="button mb-4">Book møterom</a>

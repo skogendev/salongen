@@ -80,9 +80,12 @@ function init(){
       var $steps = el.querySelectorAll('.js-step');
       var stepNumber = $steps.length;
       var thisWidth = el.offsetWidth;
+      var stepToScroll = 0;
 
       $steps.forEach(function(stepEl){
         stepEl.style.width = thisWidth;
+        var stepToScroll = $stepWrapper.dataset.step;
+        $stepWrapper.setAttribute('style','transform:translateX(' + -(thisWidth * stepToScroll) + 'px)');  
       });
 
       $stepWrapper.classList.add('flex');
@@ -91,16 +94,20 @@ function init(){
       $nextStep.forEach(function(nextEl, currentStep){
         nextEl.addEventListener('click',function(e){
           e.preventDefault();
-          var stepToScroll = nextEl.dataset.step;
+          stepToScroll = nextEl.dataset.step;
           $steps[stepToScroll].classList.remove('hidden');
           if (stepToScroll == 1) {
             setTimeout(function(){
               document.querySelector('.form').querySelector('input').focus();
             }, 500);
           }
-          $stepWrapper.setAttribute('style','transform:translateX(' + -(thisWidth * stepToScroll) + 'px)');
+          $stepWrapper.setAttribute('style','transform:translateX(' + -(thisWidth * stepToScroll) + 'px)');   
+          $stepWrapper.dataset.step = stepToScroll;
+            
         });
-      })
+      });
+
+      
     });
   }
 
@@ -109,7 +116,6 @@ function init(){
   window.addEventListener('resize', function(){
     steps();
   });
-
   // Slideshow
 
   // swiper
@@ -352,6 +358,25 @@ function init(){
 
 
 
+  function meetingRoomValidator() {
+    document.querySelectorAll('.js-meeting-rooms-check').forEach(function(meetingRoomEl){
+      meetingRoomEl.addEventListener('change',function(){
+        var inputsHaveValue = 0;
+        document.querySelectorAll('.js-meeting-rooms-check').forEach(function(meetingRoomElInside){
+          if (meetingRoomElInside.value.length > 0) {
+            inputsHaveValue++;
+          }
+        });
+        if (inputsHaveValue >= 3) {
+          document.querySelector('.js-meeting-rooms-button').disabled = false;
+        }
+      })
+    })
+  }
+
+  meetingRoomValidator();
+
+
 
 }
 
@@ -444,21 +469,6 @@ var headroom  = new Headroom(mainHeader, {
   tolerance: 50
 });
 headroom.init();
-
-
-document.querySelectorAll('.js-meeting-rooms-check').forEach(function(meetingRoomEl){
-  meetingRoomEl.addEventListener('change',function(){
-    var inputsHaveValue = 0;
-    document.querySelectorAll('.js-meeting-rooms-check').forEach(function(meetingRoomElInside){
-      if (meetingRoomElInside.value.length > 0) {
-        inputsHaveValue++;
-      }
-    });
-    if (inputsHaveValue >= 3) {
-      document.querySelector('.js-meeting-rooms-button').disabled = false;
-    }
-  })
-})
 
 
 

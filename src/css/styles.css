@@ -149,7 +149,7 @@ hr {
   --button-spike-width: 1em;
   --button-border-width: 1px;
 }
-
+/*
 .button {
 
   border: 0;
@@ -161,8 +161,10 @@ hr {
   @apply .heading-sm;
 
   color: var(--color-eple);
-  background: var(--color-eple);
+  background: none;
+  border: 1px solid var(--color-eple);
 
+  
   clip-path: polygon(
     50% 0%,
     calc(100% - var(--button-spike-width)) 0,
@@ -181,6 +183,7 @@ hr {
     0 50%,
     var(--button-spike-width) 0
   );
+  
 
   transition: 250ms color;
   cursor: pointer;
@@ -215,7 +218,6 @@ hr {
       0 50%,
       var(--button-spike-width) calc(0px - var(--button-border-width))
     );
-
 }
 
 
@@ -227,17 +229,86 @@ button.button:hover,
 a.button:hover,
 .button-fill {
   color: #fff;
-  &:before {
+  &:before,
+  & {
     background: var(--color-eple);
   }
+  background: var(--color-eple);
+  
+}
+*/
+
+.button {
+  @apply .heading-sm;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  margin-right: 1.5em;
+  color: var(--color-eple);
+  text-align: center;
+  text-decoration: none;
+  line-height: 55px;
+  padding: 0 1.5em;
+  transition: 250ms background, 250ms color;
+  -webkit-transform: translate3d(0, 0, 1px); 
+}
+
+.button:before, .button:after {
+  position: absolute;
+  content:'';
+  width: 100%;
+  left: 0px;
+  height: 26px;
+  z-index: -1;
+  display: inline-block;
+  transform-style: preserve-3d;
+}
+.button:before {
+  
+  transform: perspective(8px) rotateX(3deg) translate3d(0,0,0) translateZ(0px);
+  z-index: -1;
+}
+.button:after {
+  top: 28px;
+  transform: perspective(8px) rotateX(-3deg) translate3d(0,0,0) translateZ(0px);
+  z-index: -1;
+}
+/* Button Border Style */
+.button:before, .button:after {
+  border: 1px solid var(--color-eple);
+  transition: 250ms background;
+}
+.button:before {
+  border-bottom: none;
+  /* to prevent the border-line showing up in the middle of the shape */
+}
+.button:after {
+  border-top: none;
+  /* to prevent the border-line showing up in the middle of the shape */
+}
+/* Button hover styles */
+.button:hover:before, .button:hover:after {
+  background: var(--color-eple);
+}
+.button:hover {
+  color: #fff;
 }
 
 a.button-fill:hover,
 button.button-fill:hover {
-  color: var(--color-eple);
   &:before {
     background: #fff;
   }
+}
+
+.button-normal {
+  @apply .heading-sm;
+  position: relative;
+  color: var(--color-eple);
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid var(--color-eple);
+  padding: 1em 2em 0.8em;
 }
 
 .button-arrow {
@@ -476,7 +547,7 @@ button.button-fill:hover {
 .heading-lg {
   font-size: 1.7em;
   @screen lg {
-    font-size: 2.6em;
+    font-size: 2.4em;
   }
   margin-bottom: 1.5rem;
   font-family: var(--font-serif);
@@ -485,12 +556,12 @@ button.button-fill:hover {
 
 .heading-xl {
   font-size: 1.75em;
-  @screen lg {
+  @screen xl {
     font-size: 3em;
   }
-  @screen xxl {
+  /*@screen xxl {
     font-size: 3.5em;
-  }
+  }*/
   font-family: var(--font-serif);
   line-height: 1.2;
 }
@@ -671,6 +742,7 @@ table {
 
 
 .table-book {
+  margin-top: 1em;
   @apply .border-primary;
   border-collapse: collapse;
   width: 100%;
@@ -822,7 +894,7 @@ table {
 .c-calendar {
   background: #fff url(/assets/svg/calendar.svg) no-repeat;
   background-position: 1.5em 1em;
-  padding-left: 4em;
+  padding-left: 3em;
 }
 
 .form {
@@ -882,6 +954,10 @@ table {
 .js-steps__inner.flex {
   width: 10000px;
   transition: .5s transform;
+}
+
+.js-step {
+  border: 1px solid #fff;
 }
 
 
@@ -1071,4 +1147,16 @@ option[value=""][disabled] {
     transform: translateY(-60%);
   }
 
+}
+
+.figcaption > .text-eple.font-serif {
+  text-transform: uppercase;  
+}
+
+.list-none {
+  list-style: none;
+}
+
+.c-intro-min-height {
+  min-height: 85vh;
 }
