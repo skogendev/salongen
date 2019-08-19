@@ -8655,8 +8655,8 @@ a.button-fill:hover:before, button.button-fill:hover:before {
       position: absolute;
       color: var(--color-skog);
       bottom: -2.5em;
-      left: 0;
-      width: 100%;
+      right: 0;
+      width: 30em;
       text-align: right;
     }
 
@@ -8876,7 +8876,7 @@ a.button-fill:hover:before, button.button-fill:hover:before {
 @media (min-width: 992px) {
 
 .heading-strokes {
-    padding: 1em 2em;
+    padding: 1em 2.5em;
 }
   }
 
@@ -9259,7 +9259,8 @@ table {
 .c-calendar {
   background: #fff url(/assets/svg/calendar.svg) no-repeat;
   background-position: 1.5em 1em;
-  padding-left: 3em;
+  padding-left: 4em;
+  text-align: left;
 }
 
 .form .form__inner {
@@ -9594,7 +9595,7 @@ option[value=""][disabled] {
   }
 }
 
-.figcaption > .text-eple.font-serif {
+figcaption > .text-eple.font-serif {
   text-transform: uppercase;
 }
 
@@ -9604,6 +9605,21 @@ option[value=""][disabled] {
 
 .c-intro-min-height {
   min-height: 85vh;
+}
+
+.right-0 {
+  right: 0;
+}
+
+.inset-y-0 {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.text-center .heading-xl {
+  max-width: 18ch;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (min-width: 576px) {
