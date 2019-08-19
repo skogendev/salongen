@@ -1117,7 +1117,7 @@ option[value=""][disabled] {
 
 @media all and (max-width: 1024px) {
   .front-first-img {
-    height: 50%;
+    height: 42.5%;
     width: 100%;
     position: absolute;
     top: 0;
@@ -1159,7 +1159,10 @@ figcaption > .text-eple.font-serif {
 }
 
 .c-intro-min-height {
-  min-height: 85vh;
+  min-height: 92.5vh;
+  @screen lg {
+    min-height: 85vh;
+  }
 }
 
 .right-0 {
