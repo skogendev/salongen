@@ -10,7 +10,9 @@
 <div class="main-content" data-barba="container" data-barba-namespace="home">
 
 
-  <img src="/assets/img/tmp23.jpg" class="lazyload-img lazyload">
+  <div class="max-h-50vh">
+    <img src="/assets/img/tmp23.jpg" class="lazyload-img lazyload">
+  </div>
   <div class="section">
 
     <div class="container">

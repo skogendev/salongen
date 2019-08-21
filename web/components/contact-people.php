@@ -10,7 +10,7 @@
         </div>
       </div>
       <ul class="u-flexgrid-g list-none p-0">
-        <li class="col-12 xl:col-4">
+        <li class="col-12 md:col-6 xl:col-4">
           <div class="border-primary">
             <div class="relative">
               <img src="//unsplash.it/800/1200">
@@ -33,7 +33,7 @@
             </div>
           </div>
         </li>
-        <li class="col-12 xl:col-4">
+        <li class="col-12 md:col-6 xl:col-4">
           <div class="border-primary">
             <div class="relative">
               <img src="//unsplash.it/801/1200">
@@ -50,13 +50,13 @@
                 </tr>
                 <tr>
                   <td class="heading-sm text-eple w-1/3">Epost</td>
-                  <td>annica@salongenkonferanse.no</td>
+                  <td><a href="mailto:annica@salongenkonferanse.no" class="u-trunc">annica@salongenkonferanse.no</a></td>
                 </tr>
               </table>
             </div>
           </div>
         </li>
-        <li class="col-12 xl:col-4">
+        <li class="col-12 md:col-6 xl:col-4">
           <div class="border-primary">
             <div class="relative">
               <img src="//unsplash.it/800/1201">

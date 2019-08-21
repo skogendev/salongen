@@ -40,6 +40,7 @@ document.querySelector('.js-show-nav').addEventListener('click',function(){
 
 // Kalender
 function init(){
+  
   var calendarOpen = document.querySelectorAll('.c-calendar');
   flatpickr(calendarOpen, {
     'locale': Norwegian,
@@ -417,14 +418,10 @@ Barba.init({
       let menu = document.querySelector('.main-nav');
       let nextItem = menu.querySelector('a[href="' + next.url.path + '"]');
 
+
       if (nextItem !== null) {
         menu.querySelector('.active').classList.remove('active');
         nextItem.classList.add('active');
-      } else {
-        if (menu.querySelector('.active')) {
-          menu.querySelector('.active').classList.remove('active');
-        }
-
       }
 
     },
