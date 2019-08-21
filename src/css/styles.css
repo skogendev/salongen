@@ -1222,6 +1222,9 @@ figcaption > .text-eple.font-serif {
     width: 100%;
     object-fit: cover;
   }
+  @screen lg {
+    min-height: 80vh;
+  }
 }
 
 .max-h-50vh {

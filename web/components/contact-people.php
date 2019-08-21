@@ -27,7 +27,7 @@
                 </tr>
                 <tr>
                   <td class="heading-sm text-eple w-1/3">Epost</td>
-                  <td>annica@salongenkonferanse.no</td>
+                  <td><a href="mailto:annica@salongenkonferanse.no" class="u-trunc">annica@salongenkonferanse.no</a></td>
                 </tr>
               </table>
             </div>
@@ -73,7 +73,7 @@
                 </tr>
                 <tr>
                   <td class="heading-sm text-eple w-1/3">Epost</td>
-                  <td>annica@salongenkonferanse.no</td>
+                  <td><a href="mailto:annica@salongenkonferanse.no" class="u-trunc">annica@salongenkonferanse.no</a></td>
                 </tr>
               </table>
             </div>

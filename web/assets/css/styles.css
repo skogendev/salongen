@@ -9677,6 +9677,13 @@ figcaption > .text-eple.font-serif {
        object-fit: cover;
   }
 
+@media (min-width: 992px) {
+
+.intro-img {
+    min-height: 80vh;
+}
+  }
+
 .max-h-50vh {
   height: 60vh;
   overflow: hidden;
