@@ -792,6 +792,10 @@ table {
     width: 100%;
     display: block;
     margin: 0;
+    transition: 250ms opacity;
+  }
+  &.loading label {
+    opacity: 0.25;
   }
 }
 
@@ -1103,6 +1107,7 @@ option[value=""][disabled] {
 
 
 .meeting-room-disabled {
+  display: none;
   & .img {
     & img {
       opacity: 0.5;
@@ -1214,6 +1219,18 @@ figcaption > .text-eple.font-serif {
   }
   
 }
+@media all and (min-width: 1000px) {
+  .mob-max-h-50vh {
+    max-height: 100vh;
+    & img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+
 
 .intro-img {
   & img,

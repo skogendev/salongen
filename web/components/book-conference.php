@@ -14,7 +14,7 @@
         <div class="js-steps">
           <div class="js-steps__inner">
             <div class="js-step">
-              <input class="c-calendar c-calendar-inline hidden" type="hidden" placeholder="Velg en dato" value="2019-05-23T00:00:00.000Z" readonly="readonly">
+              <input class="c-calendar c-calendar-inline hidden" type="hidden" placeholder="Velg en dato" value="2019-05-23T00:00:00.000Z" data-room-id="967277326" readonly="readonly">
               <div class="flex pt-4">
                 <div class="w-1/2 text-xs text-eple pr-4">
                   <p>Velg aktuelle datoer for din konferanse. Fyll inn personalia i neste steg.</p>

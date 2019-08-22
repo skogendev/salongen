@@ -29,62 +29,62 @@
 			</div>
 			<div class="col-12 lg:col-5 wysiwyg">
 				<h2 class="heading-lg">Se tilgjengelighet</h2>
-				<input class="c-calendar button-normal" type="text" placeholder="Velg en dato" value="" readonly="readonly">
-				<button class="button-normal">Sjekk</button>
+				<input class="c-calendar button-normal js-calendar-hours" type="text" placeholder="Velg en dato" value="" readonly="readonly" data-room-id="967277326">
+				<button class="button-normal" id="button-meeting-hours">Sjekk</button>
 				<table class="table-book">
 					<tbody>
 						<tr>
 							<td>
-								<input type="checkbox" id="1_0700" name="7" disabled>
-								<label for="1_0700"><span>07:00</span></label>
+								<input type="checkbox" class="meeting-room-hour" id="hour7" name="7">
+								<label for="hour07"><span>07:00</span></label>
 							</td>
 							<td>
-								<input type="checkbox" id="1_0800" name="8" disabled>
-								<label for="1_0800"><span>08:00</span></label>
+								<input type="checkbox" class="meeting-room-hour" id="hour8" name="8">
+								<label for="hour08"><span>08:00</span></label>
 							</td>
 							<td>
-								<input type="checkbox" id="1_0900" name="9">
-								<label for="1_0900"><span>09:00</span></label>
+								<input type="checkbox" class="meeting-room-hour" id="hour9" name="9">
+								<label for="hour09"><span>09:00</span></label>
 							</td>
 							<td>
-								<input type="checkbox" id="1_1000" name="10">
-								<label for="1_1000"><span>10:00</span></label>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<input type="checkbox" id="1_1100" name="11">
-								<label for="1_1100"><span>11:00</span></label>
-							</td>
-							<td>
-								<input type="checkbox" id="1_1200" name="12">
-								<label for="1_1200"><span>12:00</span></label>
-							</td>
-							<td>
-								<input type="checkbox" id="1_1300" name="13">
-								<label for="1_1300"><span>13:00</span></label>
-							</td>
-							<td>
-								<input type="checkbox" id="1_1400" name="14">
-								<label for="1_1400"><span>14:00</span></label>
+								<input type="checkbox" class="meeting-room-hour" id="hour10" name="10">
+								<label for="hour10"><span>10:00</span></label>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<input type="checkbox" id="1_1500" name="15">
-								<label for="1_1500"><span>15:00</span></label>
+								<input type="checkbox" class="meeting-room-hour" id="hour11" name="11">
+								<label for="hour11"><span>11:00</span></label>
 							</td>
 							<td>
-								<input type="checkbox" id="1_1600" name="16">
-								<label for="1_1600"><span>16:00</span></label>
+								<input type="checkbox" class="meeting-room-hour" id="hour12" name="12">
+								<label for="hour12"><span>12:00</span></label>
 							</td>
 							<td>
-								<input type="checkbox" id="1_1700" name="17">
-								<label for="1_1700"><span>17:00</span></label>
+								<input type="checkbox" class="meeting-room-hour" id="hour13" name="13">
+								<label for="hour13"><span>13:00</span></label>
+							</td>
+							<td>
+								<input type="checkbox" class="meeting-room-hour" id="hour14" name="14">
+								<label for="hour14"><span>14:00</span></label>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="checkbox" class="meeting-room-hour" id="hour15" name="15">
+								<label for="hour15"><span>15:00</span></label>
+							</td>
+							<td>
+								<input type="checkbox" class="meeting-room-hour" id="hour16" name="16">
+								<label for="hour16"><span>16:00</span></label>
+							</td>
+							<td>
+								<input type="checkbox" class="meeting-room-hour" id="hour17" name="17">
+								<label for="hour17"><span>17:00</span></label>
 							</td>
 							<td class="u-border-b u-border-1px u-border-gray-light">
-								<input type="checkbox" id="1_1800" name="18">
-								<label for="1_1800"><span>18:00</span></label>
+								<input type="checkbox" class="meeting-room-hour" id="hour18" name="18">
+								<label for="hour18"><span>18:00</span></label>
 							</td>
 						</tr>
 					</tbody>

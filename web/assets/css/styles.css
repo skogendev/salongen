@@ -9152,6 +9152,11 @@ table {
     width: 100%;
     display: block;
     margin: 0;
+    transition: 250ms opacity;
+  }
+
+.table-book.loading label {
+    opacity: .25;
   }
 
 .table-food {
@@ -9545,6 +9550,10 @@ option[value=""][disabled] {
   max-width: 22rem;
 }
 
+.meeting-room-disabled {
+  display: none;
+}
+
 .meeting-room-disabled .img {
     position: relative;
   }
@@ -9667,6 +9676,19 @@ figcaption > .text-eple.font-serif {
     overflow: hidden;
     position: relative;
   }
+}
+
+@media all and (min-width: 1000px) {
+  .mob-max-h-50vh {
+    max-height: 100vh;
+  }
+
+    .mob-max-h-50vh img {
+      -o-object-fit: cover;
+         object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
 }
 
 .intro-img img,

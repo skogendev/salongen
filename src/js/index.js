@@ -42,24 +42,175 @@ document.querySelector('.js-show-nav').addEventListener('click',function(){
 function init(){
   
   var calendarOpen = document.querySelectorAll('.c-calendar');
-  flatpickr(calendarOpen, {
+  var calendar = flatpickr(calendarOpen, {
     'locale': Norwegian,
     'minDate': 'today',
     'dateFormat': 'j. F'
   });
 
+  var $meetingRoomButton = document.getElementById('button-meeting-rooms');
+  if ($meetingRoomButton) {
+    $meetingRoomButton.addEventListener('click', function(e){
+      e.preventDefault();
+      $meetingRoomButton.innerHTML = 'Vent...';
+      var timeFrom = document.getElementById('time-from').value;
+      var timeTo = document.getElementById('time-to').value;    
+      var date = calendar.selectedDates[0];
+      var year = date.getFullYear();
+      var month = date.getMonth() + 1;
+      if (month < 10) { 
+        var month = '0' + month;
+      }
+      var day = date.getDate();
+      if (day < 10) { 
+        var day = '0' + day;
+      }
+      var date = year.toString() + month.toString() + day.toString();    
+      var url = 'http://salongen.codewise.no/umbraco/api/nexudus/GetBookedRooms?date=' + date + '&from=' + timeFrom + '&to=' + timeTo;
+      
+
+      var request = new XMLHttpRequest()
+      /* http://salongen.codewise.no/umbraco/api/nexudus/GetBookedRooms?date=20191003&from=10&to=13 */
+      request.open('GET', url, true);
+      request.onload = function() {
+        // Begin accessing JSON data here
+        document.getElementById('meeting-rooms').scrollIntoView({
+          behavior: 'smooth'
+        });
+        
+        var data = JSON.parse(this.response)
+        
+        if (request.status >= 200 && request.status < 400) {
+          setTimeout(function(){
+            $meetingRoomButton.innerHTML = 'Sjekk';
+          }, 500);
+          data.forEach(function(id){
+            document.querySelector('.room-' + id).classList.add('meeting-room-disabled');
+          })
+        } else {
+          console.log('error')
+        }
+      }
+
+      request.send()
+      
+  
+      
+      
+  
+    });
+  }
+
+  function getBookedHours() {
+    document.querySelector('.table-book').classList.add('loading');
+    var date = calendar.selectedDates[0];
+      var year = date.getFullYear();
+      var month = date.getMonth() + 1;
+      if (month < 10) { 
+        var month = '0' + month;
+      }
+      var day = date.getDate();
+      if (day < 10) { 
+        var day = '0' + day;
+      }
+      var date = year.toString() + month.toString() + day.toString();    
+
+      var roomId = document.querySelector('.js-calendar-hours').dataset.roomId;
+      console.log(roomId);
+      var url = 'http://salongen.codewise.no/umbraco/api/nexudus/GetBookedHours?roomid=' + roomId + '&date=' + date;
+      console.log(url);
+
+      var request = new XMLHttpRequest()
+      request.open('GET', url, true);
+      request.onload = function() {
+        
+        var data = JSON.parse(this.response)
+
+        document.querySelectorAll('.meeting-room-hour').forEach(function(el) {
+          el.disabled = false;
+        });
+
+        
+
+        
+        if (request.status >= 200 && request.status < 400) {
+          document.querySelector('.table-book').classList.remove('loading');
+          if (data.length) {
+            data.forEach(function(hour){
+              document.getElementById('hour' + hour).disabled = true;
+            });
+          }
+          
+
+        } else {
+          console.log('error')
+        }
+      }
+
+      request.send()
+  }
+
+  var $meetingHourButton = document.getElementById('button-meeting-hours');
+  if ($meetingHourButton) {
+    $meetingHourButton.addEventListener('click', function(e){
+      e.preventDefault();
+      getBookedHours();
+    });
+  }
+
+  var $hourInput = document.querySelector('.js-calendar-hours');
+  if ($hourInput) {
+    $hourInput.addEventListener('change', function(e){
+      e.preventDefault();
+      getBookedHours();
+    });
+  }
+  
+  
+
+  
+
   var calendarInline = document.querySelectorAll('.c-calendar-inline');
-  flatpickr(calendarInline, {
-    'dateFormat': 'j. F',
-    'locale': Norwegian,
-    'minDate': 'today',
-    'enableTime': false,
-    'inline': true,
-    'mode': 'multiple',
-    'onReady': function(){
-      this.calendarContainer.classList.add('js-active');
+  if (calendarInline.length) {
+    var id = calendarInline[0].dataset.roomId;
+    var url = 'http://salongen.codewise.no/umbraco/api/nexudus/GetBookedDays?roomid=' + id;
+    
+
+    var request = new XMLHttpRequest()
+    request.open('GET', url, true);
+    request.onload = function() {
+      
+      var data = JSON.parse(this.response)
+
+      
+      
+      if (request.status >= 200 && request.status < 400) {
+        if (data.length) {
+          flatpickr(calendarInline, {
+            'disable': data,
+            'dateFormat': 'j. F',
+            'locale': Norwegian,
+            'minDate': 'today',
+            'enableTime': false,
+            'inline': true,
+            'mode': 'multiple',
+            'onReady': function(){
+              this.calendarContainer.classList.add('js-active');
+            }
+          });
+        }
+        
+
+      } else {
+        console.log('error')
+      }
     }
-  });
+
+    request.send()
+    
+    
+  }
+  
 
   // Lazysizes
   lazySizes.init();
@@ -378,6 +529,7 @@ function init(){
   meetingRoomValidator();
 
 
+  
 
 }
 
@@ -536,3 +688,7 @@ setCorrectingInterval(function(){
 }, 4000)
 
 */
+
+
+
+
