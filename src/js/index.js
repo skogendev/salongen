@@ -114,11 +114,15 @@ function init(){
         var day = '0' + day;
       }
       var date = year.toString() + month.toString() + day.toString();    
-
+      
       var roomId = document.querySelector('.js-calendar-hours').dataset.roomId;
-      console.log(roomId);
+      
       var url = 'http://salongen.codewise.no/umbraco/api/nexudus/GetBookedHours?roomid=' + roomId + '&date=' + date;
-      console.log(url);
+      
+      var linkUrl = 'https://ibsen.spaces.nexudus.com/nb/bookings/calendar?resourceid=' + roomId + '&date=' + year.toString() + '-' + month.toString() + '-' + day.toString() + '&view=agendaDay&showAll=true';
+      
+      document.querySelector('.js-book-room-link ').href = linkUrl;
+      console.log(linkUrl);
 
       var request = new XMLHttpRequest()
       request.open('GET', url, true);

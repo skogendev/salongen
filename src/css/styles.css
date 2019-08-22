@@ -780,7 +780,7 @@ table {
     position: absolute;
     right: 9999em;
     &:checked + label {
-      background: var(--color-krem);
+      /* background: var(--color-krem);*/
     }
     &:disabled + label {
       cursor: disabled;

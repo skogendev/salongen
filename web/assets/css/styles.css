@@ -9139,7 +9139,7 @@ table {
   }
 
 .table-book input[type=checkbox]:checked + label {
-      background: var(--color-krem);
+      /* background: var(--color-krem);*/
     }
 
 .table-book input[type=checkbox]:disabled + label {
