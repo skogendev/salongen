@@ -75,6 +75,7 @@
 
 html {
   font-size: 16px;
+  scroll-behavior: smooth;
 
   @screen sm {
     font-size: calc(14px + (16 - 14) * ((100vw - 576px) / 416));

@@ -14,7 +14,7 @@
           </div>
           <div class="heading-sm no-underline text-eple mt-8">
             <a href="#" class="block mb-2 icon icon-arrow-left">Se alle møterom</a>
-            <a href="#" class="block icon icon-arrow-down">Se tilgjengelighet</a>
+            <a href="#meeting-rooms-availability" class="block icon icon-arrow-down">Se tilgjengelighet</a>
           </div>
         </div>
         <div class="overflow-hidden"><img src="/assets/img/tmp16.jpg" class="lazyload lazyload-img"></div>
