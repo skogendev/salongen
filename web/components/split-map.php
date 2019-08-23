@@ -1,7 +1,7 @@
 <div class="section bg-split bg-split-right">
   <div class="container mt-32 bg-segl">
     <div class="u-flexgrid-g">
-      <div class="col-10 lg:col-5 xl:col-5 mb-16 pt-32">
+      <div class="col-12 lg:col-5 xl:col-5 mb-4 lg:mb-16 lg:pt-32">
         <div class="heading-sm text-eple mb-4">Kontakt</div>
         <h2 class="heading-lg">Finn frem</h2>
         <hr class="hr-small mx-0">
@@ -26,7 +26,7 @@
 
       </div>
     </div>
-    <div class="h-full w-1/2 bg-black absolute pin-t pin-r">
+    <div class="h-full -ml-8 -mr-8 lg:mr-0 lg:ml-0 lg:w-1/2 bg-black lg:absolute pin-t pin-r">
       <div id="map" class="w-full h-full"></div>
     </div>
   </div>

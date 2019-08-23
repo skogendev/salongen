@@ -2,8 +2,8 @@
   <div class="section bg-split">
     <div class="container">
       <div class="u-flexgrid-g text-left">
-        <div class="col-10 lg:col-5 xl:col-5">
-          <div class="w-4/5">
+        <div class="col-12 lg:col-5 xl:col-5">
+          <div class="lg:w-4/5 mb-16">
             <div class="heading-sm text-eple mb-4">Konferanse</div>
             <h2 class="heading-lg">Book ditt neste arrangement hos oss</h2>
             <hr class="hr mx-0">
@@ -11,8 +11,8 @@
               <a href="/konferanse.php" class="button mt-4">Les mer om konferanse</a>
           </div>
         </div>
-        <div class="col-10 lg:col-5 xl:col-5 xl:col-off-2">
-          <div class="w-4/5">
+        <div class="col-12 lg:col-5 xl:col-5 lg:col-off-2">
+          <div class="lg:w-4/5">
             <div class="heading-sm text-eple mb-4">Møterom</div>
             <h2 class="heading-lg">Det perfekte sted for møter</h2>
             <hr class="hr mx-0">
