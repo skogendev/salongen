@@ -1,4 +1,4 @@
-<div class="section bg-split">
+<div class="section bg-split" id="meeting-rooms-availability">
 	<div class="container">
 		<div class="u-flexgrid-g justify-between">
 			<div class="col-12 lg:col-5 wysiwyg">
