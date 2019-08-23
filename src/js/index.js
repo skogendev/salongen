@@ -40,6 +40,8 @@ document.querySelector('.js-show-nav').addEventListener('click',function(){
 
 // Kalender
 function init(){
+
+  
   
   var calendarOpen = document.querySelectorAll('.c-calendar');
   var calendar = flatpickr(calendarOpen, {
@@ -47,12 +49,15 @@ function init(){
     'minDate': 'today',
     'dateFormat': 'j. F'
   });
+  
 
-  var $meetingRoomButton = document.getElementById('button-meeting-rooms');
-  if ($meetingRoomButton) {
-    $meetingRoomButton.addEventListener('click', function(e){
-      e.preventDefault();
-      $meetingRoomButton.innerHTML = 'Vent...';
+  function checkMeetingRoom(date, from, to) {
+    $meetingRoomButton.innerHTML = 'Vent...';
+    if (date) {
+      var date = date;
+      var timeFrom = from;
+      var timeTo = to; 
+    } else {
       var timeFrom = document.getElementById('time-from').value;
       var timeTo = document.getElementById('time-to').value;    
       var date = calendar.selectedDates[0];
@@ -66,40 +71,87 @@ function init(){
         var day = '0' + day;
       }
       var date = year.toString() + month.toString() + day.toString();    
-      var url = 'http://salongen.codewise.no/umbraco/api/nexudus/GetBookedRooms?date=' + date + '&from=' + timeFrom + '&to=' + timeTo;
-      
 
-      var request = new XMLHttpRequest()
-      /* http://salongen.codewise.no/umbraco/api/nexudus/GetBookedRooms?date=20191003&from=10&to=13 */
-      request.open('GET', url, true);
-      request.onload = function() {
-        // Begin accessing JSON data here
-        document.getElementById('meeting-rooms').scrollIntoView({
-          behavior: 'smooth'
-        });
-        
-        var data = JSON.parse(this.response)
-        
-        if (request.status >= 200 && request.status < 400) {
-          setTimeout(function(){
-            $meetingRoomButton.innerHTML = 'Sjekk';
-          }, 500);
-          data.forEach(function(id){
-            document.querySelector('.room-' + id).classList.add('meeting-room-disabled');
-          })
-        } else {
-          console.log('error')
-        }
+    }
+    
+    var url = 'http://salongen.codewise.no/umbraco/api/nexudus/GetBookedRooms?date=' + date + '&from=' + timeFrom + '&to=' + timeTo;
+    
+
+    var request = new XMLHttpRequest()
+    /* http://salongen.codewise.no/umbraco/api/nexudus/GetBookedRooms?date=20191003&from=10&to=13 */
+    request.open('GET', url, true);
+    request.onload = function() {
+      // Begin accessing JSON data here
+      document.getElementById('meeting-rooms').scrollIntoView({
+        behavior: 'smooth'
+      });
+      
+      var data = JSON.parse(this.response)
+      
+      if (request.status >= 200 && request.status < 400) {
+        setTimeout(function(){
+          $meetingRoomButton.innerHTML = 'Sjekk';
+        }, 500);
+        data.forEach(function(id){
+          document.querySelector('.room-' + id).classList.add('meeting-room-disabled');
+        })
+      } else {
+        console.log('error')
       }
+    }
 
-      request.send()
+    request.send()
+  }
+  var $meetingRoomButton = document.getElementById('button-meeting-rooms');
+  if ($meetingRoomButton) {
+    $meetingRoomButton.addEventListener('click', function(e){
+      e.preventDefault();
       
-  
-      
-      
-  
+      checkMeetingRoom()
     });
   }
+
+  var urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.has('d')) {
+ 
+    var timeFrom = urlParams.get('f');
+    var timeTo = urlParams.get('t');
+    var day = urlParams.get('d');
+    var day = day.split(' ');
+    switch(day[1]) {
+      case 'Januar':
+        var month = '01';
+      case 'Februar':
+        var month = '02';
+      case 'Mars':
+          var month = '03';
+      case 'April':
+        var month = '04';  
+      case 'Mai':
+          var month = '05';
+      case 'Juni':
+        var month = '06';  
+      case 'Juli':
+        var month = '07';
+      case 'August':
+        var month = '08';
+      case 'September':
+          var month = '09';
+      case 'Oktober':
+        var month = '10';  
+      case 'November':
+          var month = '11';
+      case 'Desember':
+        var month = '12';              
+    }
+    var day = parseInt(day[0]);
+    var d = new Date();
+    var n = d.getFullYear();
+    var date = n.toString() + month.toString() + day.toString();    
+
+    checkMeetingRoom(date, timeFrom, timeTo)
+
+}
 
   function getBookedHours() {
     document.querySelector('.table-book').classList.add('loading');
@@ -122,7 +174,6 @@ function init(){
       var linkUrl = 'https://ibsen.spaces.nexudus.com/nb/bookings/calendar?resourceid=' + roomId + '&date=' + year.toString() + '-' + month.toString() + '-' + day.toString() + '&view=agendaDay&showAll=true';
       
       document.querySelector('.js-book-room-link ').href = linkUrl;
-      console.log(linkUrl);
 
       var request = new XMLHttpRequest()
       request.open('GET', url, true);
@@ -491,7 +542,6 @@ function init(){
 
                 // Create markers.
                 for (var i = 0; i < places.length; i++) {
-                  console.log(i);
                   var num = i + 1;
                   var marker = new MarkerWithLabel({
                     map: map,

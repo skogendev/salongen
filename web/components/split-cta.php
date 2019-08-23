@@ -18,11 +18,11 @@
             <hr class="hr mx-0">
               <p>Salongen er et personlig og inspirerende konferansehus med et stort hjerte for å skreddersy arrangementer av høy kvalitet. </p>
 
-              <form class="form-meeting-rooms mt-8 relative">
-                <input class="w-full p-0 m-0 c-calendar button-normal js-meeting-rooms-check" type="text" placeholder="Velg en dato" readonly="readonly">
+              <form class="form-meeting-rooms mt-8 relative" action="/moterom.php#meeting-rooms">
+                <input class="w-full p-0 m-0 c-calendar button-normal js-meeting-rooms-check" type="text" placeholder="Velg en dato" readonly="readonly" name="d">
                 <div class="flex">
                   <div class="relative w-1/3">
-                    <select class="w-full button-normal bg-white text-center border-t-0 border-r-0 js-meeting-rooms-check" type="text" placeholder="Fra"  readonly="readonly">
+                    <select class="w-full button-normal bg-white text-center border-t-0 border-r-0 js-meeting-rooms-check" type="text" placeholder="Fra"  readonly="readonly" name="f">
                       <option value selected disabled>Fra</option>
                       <option>08.00</option>
                       <option>09.00</option>
@@ -40,7 +40,7 @@
                     </div>
                   </div>
                   <div class="relative w-1/3">
-                    <select class="w-full button-normal bg-white text-center border-t-0 border-r-0 js-meeting-rooms-check" type="text" readonly="readonly">
+                    <select class="w-full button-normal bg-white text-center border-t-0 border-r-0 js-meeting-rooms-check" type="text" readonly="readonly" name="t">
                       <option value selected disabled>Til</option>
                       <option>09.00</option>
                       <option>10.00</option>

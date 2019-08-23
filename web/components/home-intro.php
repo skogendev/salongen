@@ -10,7 +10,11 @@
       </div>
     </div>
     <div class="w-full lg:flex-1 mob-order-1 mob-max-h-50vh intro-img">
-      <video src="/assets/video/introvideo.mp4" class="inview lazyload-img lazyload" muted autoplay loop>
+      <video class="inview lazyload-img lazyload" muted autoplay loop playsinline>
+        <source src="/assets/video/introvideo.mp4" type="video/webm">
+        <source src="/assets/video/introvideo.mp4" type="video/mp4">
+        <img src="/assets/tmp24.jpg">
+      </video>
       <!--<img data-src="/assets/img/tmp24.jpg" class="inview lazyload-img lazyload">-->
     </div>  
   </div>
