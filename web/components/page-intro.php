@@ -23,7 +23,7 @@
             <div class="heading-sm text-center">Velg ønsket tidspunkt</div>
 
             <form class="form-meeting-rooms mt-4 mx-auto relative">
-              <input id="date" class="w-full p-0 m-0 c-calendar button-normal js-meeting-rooms-check" type="text" placeholder="Velg en dato" readonly="readonly">
+              <input id="date" class="w-full p-0 m-0 c-calendar button-normal js-meeting-rooms-check" type="text" placeholder="Velg en dato" value="28-08-2019" readonly="readonly">
               <div class="flex">
                 <div class="relative w-1/3">
                   <select id="time-from" class="w-full button-normal bg-white text-center border-t-0 border-r-0 js-meeting-rooms-check" type="text" placeholder="Fra"  readonly="readonly">

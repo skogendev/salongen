@@ -8485,6 +8485,12 @@ a.button:hover,
     text-decoration: none !important;
   }
 
+@media all and (min-width: 800px) and (max-width: 1025px) {
+    .button {
+      font-size: .75em;
+    }
+  }
+
 .button:not(:last-child) {
     margin-right: 1.5em;
   }
@@ -8564,11 +8570,18 @@ a.button-fill:hover:before, button.button-fill:hover:before {
   text-decoration: none;
   border: 1px solid var(--color-eple);
   padding: 1em 2em .8em;
+  min-height: 3.8em;
 }
 
 .button-normal,
   .button-normal a {
     text-decoration: none !important;
+  }
+
+@media all and (min-width: 800px) and (max-width: 1025px) {
+    .button-normal {
+      font-size: .75em;
+    }
   }
 
 .button-arrow {
@@ -8587,6 +8600,12 @@ a.button-fill:hover:before, button.button-fill:hover:before {
 .button-arrow,
   .button-arrow a {
     text-decoration: none !important;
+  }
+
+@media all and (min-width: 800px) and (max-width: 1025px) {
+    .button-arrow {
+      font-size: .75em;
+    }
   }
 
 .button-arrow:after,
@@ -8637,6 +8656,12 @@ a.button-fill:hover:before, button.button-fill:hover:before {
     text-decoration: none !important;
   }
 
+@media all and (min-width: 800px) and (max-width: 1025px) {
+    .button-dark {
+      font-size: .75em;
+    }
+  }
+
 .button-normal {
   padding: 1em 1.5em;
   text-decoration: none;
@@ -8656,6 +8681,12 @@ a.button-fill:hover:before, button.button-fill:hover:before {
 .button-normal,
   .button-normal a {
     text-decoration: none !important;
+  }
+
+@media all and (min-width: 800px) and (max-width: 1025px) {
+    .button-normal {
+      font-size: .75em;
+    }
   }
 
 .button-eple {
@@ -8841,6 +8872,17 @@ a.button-fill:hover:before, button.button-fill:hover:before {
   .heading-sm a {
     text-decoration: none !important;
   }
+
+@media all and (min-width: 800px) and (max-width: 1025px) {
+    .heading-sm {
+      font-size: .75em;
+    }
+  }
+
+.text-center p {
+  padding-left: .5em;
+  padding-right: .5em;
+}
 
 .heading-md {
   font-size: 1.4em;
@@ -9118,6 +9160,12 @@ table {
 .table-specs td:first-child,
     .table-specs td:first-child a {
       text-decoration: none !important;
+    }
+
+@media all and (min-width: 800px) and (max-width: 1025px) {
+      .table-specs td:first-child {
+        font-size: .75em;
+      }
     }
 
 .table-book {
@@ -9522,6 +9570,12 @@ table {
 .list-map li:before,
     .list-map li:before a {
       text-decoration: none !important;
+    }
+
+@media all and (min-width: 800px) and (max-width: 1025px) {
+      .list-map li:before {
+        font-size: .75em;
+      }
     }
 
 .gradient-bottom {
