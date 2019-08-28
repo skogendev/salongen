@@ -787,3 +787,5 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   // other browser
   return false;
 })();
+
+detectIE();
