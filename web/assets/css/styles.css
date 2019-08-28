@@ -9760,9 +9760,6 @@ figcaption > .text-eple.font-serif {
     width: 100%;
     -o-object-fit: cover;
        object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
   }
 
 @media (min-width: 992px) {
