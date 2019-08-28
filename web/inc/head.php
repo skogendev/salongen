@@ -9,7 +9,7 @@
     if (msie > 0) {
         // IE 10 or older => return version number
         var ieV = parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
-        document.querySelector('body').className += ' ie-old';
+        document.body.className += ' ie-old';
     }
 
     var trident = ua.indexOf('Trident/');
@@ -17,14 +17,14 @@
         // IE 11 => return version number
         var rv = ua.indexOf('rv:');
         var ieV = parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
-        document.querySelector('body').className += ' ie11';
+        document.body.className += ' ie11';
     }
 
     var edge = ua.indexOf('Edge/');
     if (edge > 0) {
       // IE 12 (aka Edge) => return version number
       var ieV = parseInt(ua.substring(edge + 5, ua.indexOf('.', edge)), 10);
-        document.querySelector('body').className += ' edge';
+        document.body.className += ' edge';
     }
 
     // other browser
