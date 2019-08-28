@@ -2,36 +2,38 @@
   <title>SALONGEN</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <script>
-  function detectIE() {
-    var ua = window.navigator.userAgent;
+  (function () {
+    var v = 3,
+        div = document.createElement('div'),
+        all = div.getElementsByTagName('i'),
+        browser,
+        isIE;
 
-    var msie = ua.indexOf('MSIE ');
-    if (msie > 0) {
-        // IE 10 or older => return version number
-        var ieV = parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
-        document.body.className += ' ie-old';
+    while ( div.innerHTML = '<!--[if gt IE ' + (++v) + ']><i></i><![endif]-->', all[0]);
+    v = v > 4 ? v : document.documentMode;
+    if (v) {
+        browser = " ie"
+        for(var i = 5; i<12; i++){
+            if(v < i) {
+                browser += ' lte-ie' + i;
+            }else if (v > i) {
+                browser += ' gte-ie' + i;
+            }else if (v == i) {
+                browser += ' ie' + i;
+            }
+        }
+
+        isIE = {
+            "version" : v
+        }
+
+    } else {
+        browser = ' not-ie';
+        isIE = false;
     }
-
-    var trident = ua.indexOf('Trident/');
-    if (trident > 0) {
-        // IE 11 => return version number
-        var rv = ua.indexOf('rv:');
-        var ieV = parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
-        document.body.className += ' ie11';
-    }
-
-    var edge = ua.indexOf('Edge/');
-    if (edge > 0) {
-      // IE 12 (aka Edge) => return version number
-      var ieV = parseInt(ua.substring(edge + 5, ua.indexOf('.', edge)), 10);
-        document.body.className += ' edge';
-    }
-
-    // other browser
-    return false;
-  };
-
-  detectIE();
+    document.documentElement.className += browser;
+    window.ie = isIE;
+}());
   </script>
   <style type="text/css">
     @font-face {
