@@ -2,7 +2,7 @@
   <title>SALONGEN</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <script>
-  (function detectIE() {
+  function detectIE() {
     var ua = window.navigator.userAgent;
 
     var msie = ua.indexOf('MSIE ');
@@ -29,7 +29,7 @@
 
     // other browser
     return false;
-  })();
+  };
 
   detectIE();
   </script>
