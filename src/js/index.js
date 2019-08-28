@@ -154,6 +154,7 @@ function init(){
 }
 
   function getBookedHours() {
+    document.querySelector('.table-book').classList.remove('first');
     document.querySelector('.table-book').classList.add('loading');
     var date = calendar.selectedDates[0];
       var year = date.getFullYear();

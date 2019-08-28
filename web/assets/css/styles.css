@@ -9168,9 +9168,12 @@ table {
       }
     }
 
-.table-book {
-  margin-top: 1em;
+.table-book-border {
   border: 1px solid var(--color-krem);
+  margin-top: 1em;
+}
+
+.table-book {
   border-collapse: collapse;
   width: 100%;
 }
@@ -9180,6 +9183,7 @@ table {
     text-align: center;
     border-right: 1px solid var(--color-krem);
     border-bottom: 1px solid var(--color-krem);
+    transition: 250ms border-color;
   }
 
 .table-book td:last-child {
@@ -9201,8 +9205,13 @@ table {
 
 .table-book input[type=checkbox]:disabled + label {
       cursor: disabled;
-      opacity: .25;
+      color: #aaa;
     }
+
+.table-book input[type=checkbox]:disabled + label:after {
+        color: var(--color-eple);
+        content: 'Opptatt';
+      }
 
 .table-book label {
     padding: 1em;
@@ -9210,11 +9219,50 @@ table {
     display: block;
     margin: 0;
     transition: 250ms opacity;
+    line-height: 1.5;
+    padding-bottom: 1.25em;
+    position: relative;
   }
 
-.table-book.loading label {
-    opacity: .25;
+.table-book label:after {
+      content: 'Ledig';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      font-size: .5em;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      width: 100%;
+      padding: .5rem;
+    }
+
+.table-book.loading label,
+  .table-book.first label {
+    opacity: 0;
   }
+
+.table-book.loading,
+  .table-book.first {
+    position: relative;
+  }
+
+.table-book.loading td, .table-book.first td {
+      border-color: #fff;
+    }
+
+.table-book.loading:before, .table-book.first:before {
+      content: 'Vent mens vi finner ledig tidspunkt...';
+      text-align: center;
+      color: var(--color-eple);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+.table-book.first:before {
+      content: 'Velg en dato først...';
+    }
 
 .table-food {
   width: 100%;
@@ -9794,6 +9842,11 @@ figcaption > .text-eple.font-serif {
   overflow: hidden;
   text-overflow: ellipsis;
   display: block;
+}
+
+.c-calendar:focus {
+  outline: 0;
+  border-color: var(--color-eple);
 }
 
 @media (min-width: 576px) {

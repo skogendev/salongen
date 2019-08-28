@@ -2,38 +2,39 @@
   <title>SALONGEN</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <script>
-  (function () {
-    var v = 3,
-        div = document.createElement('div'),
-        all = div.getElementsByTagName('i'),
-        browser,
-        isIE;
+    (function () {
+      var v = 3,
+          div = document.createElement('div'),
+          all = div.getElementsByTagName('i'),
+          browser,
+          isIE;
 
-    while ( div.innerHTML = '<!--[if gt IE ' + (++v) + ']><i></i><![endif]-->', all[0]);
-    v = v > 4 ? v : document.documentMode;
-    if (v) {
-        browser = " ie"
-        for(var i = 5; i<12; i++){
-            if(v < i) {
-                browser += ' lte-ie' + i;
-            }else if (v > i) {
-                browser += ' gte-ie' + i;
-            }else if (v == i) {
-                browser += ' ie' + i;
-            }
-        }
+      while ( div.innerHTML = '<!--[if gt IE ' + (++v) + ']><i></i><![endif]-->', all[0]);
+      v = v > 4 ? v : document.documentMode;
+      if (v) {
+          browser = " ie"
+          for(var i = 5; i<12; i++){
+              if(v < i) {
+                  browser += ' lte-ie' + i;
+              }else if (v > i) {
+                  browser += ' gte-ie' + i;
+              }else if (v == i) {
+                  browser += ' ie' + i;
+                  console.log('ie' + i)
+              }
+          }
 
-        isIE = {
-            "version" : v
-        }
+          isIE = {
+              "version" : v
+          }
 
-    } else {
-        browser = ' not-ie';
-        isIE = false;
-    }
-    document.documentElement.className += browser;
-    window.ie = isIE;
-}());
+      } else {
+          browser = ' not-ie';
+          isIE = false;
+      }
+      document.documentElement.className += browser;
+      window.ie = isIE;
+  }());
   </script>
   <style type="text/css">
     @font-face {

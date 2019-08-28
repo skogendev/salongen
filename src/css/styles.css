@@ -780,10 +780,13 @@ table {
   }
 }
 
+.table-book-border {
+  @apply .border-primary;
+  margin-top: 1em;
+
+}
 
 .table-book {
-  margin-top: 1em;
-  @apply .border-primary;
   border-collapse: collapse;
   width: 100%;
   & td {
@@ -791,6 +794,8 @@ table {
     text-align: center;
     border-right: 1px solid var(--color-krem);
     border-bottom: 1px solid var(--color-krem);
+    transition: 250ms border-color;
+
   }
   & td:last-child {
     border-right: 0;
@@ -806,7 +811,11 @@ table {
     }
     &:disabled + label {
       cursor: disabled;
-      opacity: 0.25;
+      color: #aaa;
+      &:after {
+        color: var(--color-eple);
+        content: 'Opptatt';
+      }
     }
   }
   & label {
@@ -815,9 +824,49 @@ table {
     display: block;
     margin: 0;
     transition: 250ms opacity;
+    line-height: 1.5;
+    padding-bottom: 1.25em;
+    position: relative;
+    &:after {
+      content: 'Ledig';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      font-size: 0.5em;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      width: 100%;
+      
+      padding: 0.5rem;
+    }
   }
-  &.loading label {
-    opacity: 0.25;
+  &.loading label,
+  &.first label {
+    opacity: 0;
+  }
+  &.loading,
+  &.first {
+    position: relative;
+
+    & td {
+      border-color: #fff;
+    }
+    &:before {
+      content: 'Vent mens vi finner ledig tidspunkt...';
+      text-align: center;
+      color: var(--color-eple);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+  }
+  &.first {
+ 
+    &:before {
+      content: 'Velg en dato først...';
+
+    }
   }
 }
 
@@ -1293,4 +1342,10 @@ figcaption > .text-eple.font-serif {
   overflow: hidden;
   text-overflow: ellipsis;
   display: block;
+}
+
+
+.c-calendar:focus {
+  outline: 0;
+  border-color: var(--color-eple);
 }
