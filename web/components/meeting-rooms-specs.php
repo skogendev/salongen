@@ -94,7 +94,7 @@
 						<p>Velg ledige tidspunkt, og gå videre ved å trykke på book.</p>
 					</div>
 					<div class="w-1/2 text-right">
-						<a href="https://ibsen.spaces.nexudus.com/nb/bookings/calendar?resourceid=967277326&date=2019-08-22&view=agendaDay&showAll=true" class="js-book-room-link button-normal" target="_blank">Gå til booking</a>
+						<a href="https://ibsen.spaces.nexudus.com/nb/bookings/calendar?resourcetypeid=967277326&date=2019-08-22&view=agendaDay&showAll=true" class="js-book-room-link button-normal" target="_blank">Gå til booking</a>
 					</div>
 				</div>
 			</div>

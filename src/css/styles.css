@@ -73,6 +73,13 @@
   --ease-in-out-circ: cubic-bezier(.785, .135, .15, .86);
 }
 
+.ie11 * {
+  opacity: 1 !important;  
+}
+.ie11 .main-header {
+  transform: translate(0,0) !important;
+}
+
 html {
   font-size: 16px;
   scroll-behavior: smooth;

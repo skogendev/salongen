@@ -20,10 +20,6 @@
             <a href="#" class="heading-sm text-eple no-underline">Mer info</a>
           </li>
         </ol>
-
-
-
-
       </div>
     </div>
     <div class="h-full -ml-8 -mr-8 lg:mr-0 lg:ml-0 lg:w-1/2 bg-black lg:absolute pin-t pin-r">
