@@ -8328,6 +8328,13 @@ html {
   box-sizing: inherit;
 }
 
+html,
+body {
+  position: relative;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
 body {
   background: var(--bg-color);
   color: var(--color);
