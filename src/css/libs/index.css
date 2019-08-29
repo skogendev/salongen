@@ -5,7 +5,7 @@
 
 }
 
-.swiper-slide {
+.swiper-slides {
   width: 80vw !important;
   height: auto !important;
   margin-right: 6% !important;
@@ -15,6 +15,16 @@
     margin-right: 6% !important;
   }
 
+}
+
+.swiper-slide {
+  width: 85vw !important;
+  @screen lg {
+    width: 33% !important;
+  }
+  @screen xl {
+    width: 22.5% !important;
+  }
 }
 
 .swiper-prev,

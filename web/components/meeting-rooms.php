@@ -1,5 +1,12 @@
 <div class="section" id="meeting-rooms">
   <div class="container">
+    <div class="text-center lg:mb-12">
+      <div class="heading-sm text-eple js-load-stagger">Møterom</div>
+      <hr class="hr-small mt-3 js-load-stagger">
+      <h2 class="heading-xl mb-8 js-load-stagger">
+        Våre møterom
+      </h2>
+    </div>
     <div class="u-flexgrid-g">
       <a href="/lunden.php" class="col-12 mb-4 lg:mb-0 lg:col-6 xl:col-4 no-underline hover-img-scale meeting-room room-967277326">
         <div class="border-primary hover-border-eple">

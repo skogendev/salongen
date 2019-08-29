@@ -328,11 +328,9 @@ function init(){
 
   // swiper
   var mySwiper = new Swiper ('.swiper-container', {
-
       loop: false,
       slidesPerView: 'auto',
       slidesPerGroup: 1,
-      spaceBetween: 100,
       grabCursor: true,
       navigation: {
         nextEl: '.swiper-next',

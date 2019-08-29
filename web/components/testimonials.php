@@ -28,9 +28,9 @@
       </div>
     </div>
   </div>
-  <div class="swiper-container">
-    <div class="swiper-wrapper relative">
-      <a href="/artikkel.php" class="col-4 no-underline block swiper-slide u-line-up-with-grid hover-img-scale">
+  <div class="swiper-container container">
+    <div class="swiper-wrapper lg:px-5 relative">
+      <a href="/artikkel.php" class="col-4 no-underline block swiper-slide hover-img-scale">
         <div class="border-primary ref-box">
           <div class="overflow-hidden"><img src="/assets/img/tmp6.jpg" class="object-cover lazyload-img lazyload"></div>
           <div class="absolute pin-b ref-box__inner w-full">

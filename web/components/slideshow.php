@@ -29,9 +29,9 @@
       </div>
     </div>
   </div>
-  <div class="swiper-container">
-    <div class="swiper-wrapper  relative">
-      <div class="swiper-slide u-line-up-with-grid">
+  <div class="swiper-container container">
+    <div class="swiper-wrapper px-5 relative">
+      <div class="swiper-slide ">
         <img src="/assets/img/tmp6.jpg" class="object-cover lazyload-img lazyload">
       </div>
       <div class="swiper-slide">

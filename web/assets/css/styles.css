@@ -1054,7 +1054,7 @@ span.flatpickr-weekday {
 .swiper-container {
 }
 
-.swiper-slide {
+.swiper-slides {
   width: 80vw !important;
   height: auto !important;
   margin-right: 6% !important;
@@ -1062,10 +1062,28 @@ span.flatpickr-weekday {
 
 @media (min-width: 992px) {
 
-.swiper-slide {
+.swiper-slides {
     width: 22.5% !important;
     margin-right: var(--gutter-x-desktop) !important;
     margin-right: 6% !important;
+}
+  }
+
+.swiper-slide {
+  width: 85vw !important;
+}
+
+@media (min-width: 992px) {
+
+.swiper-slide {
+    width: 33% !important;
+}
+  }
+
+@media (min-width: 1200px) {
+
+.swiper-slide {
+    width: 22.5% !important;
 }
   }
 
