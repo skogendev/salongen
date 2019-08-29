@@ -29,7 +29,10 @@
 			</div>
 			<div class="col-12 lg:col-5 wysiwyg">
 				<h2 class="heading-lg">Se tilgjengelighet</h2>
-				<input class="c-calendar button-normal js-calendar-hours w-full" type="text" placeholder="Velg en dato" value="" readonly="readonly" data-room-id="967277326">
+				<div class="flex ">
+					<input class="c-calendar button-normal js-calendar-hours flex-1 mr-4 pr-0 lg:pr-2" type="text" placeholder="Velg en dato" value="" readonly="readonly" data-room-id="967277326">
+					<a href="https://ibsen.spaces.nexudus.com/nb/bookings/calendar?resourcetypeid=967277326&date=2019-08-22&view=agendaDay&showAll=true" class="js-book-room-link button-arrow " target="_blank"><span class="hidden lg:inline">Gå til </span>book<span class="hidden lg:inline">ing</span></a>
+</div>
 				<!--<button class="button-normal" id="button-meeting-hours">Sjekk</button>-->
 				<div class="table-book-border">
 					<table class="table-book first">
@@ -96,7 +99,7 @@
 						<p>Velg ledige tidspunkt, og gå videre ved å trykke på book.</p>
 					</div>
 					<div class="w-1/2 text-right">
-						<a href="https://ibsen.spaces.nexudus.com/nb/bookings/calendar?resourcetypeid=967277326&date=2019-08-22&view=agendaDay&showAll=true" class="js-book-room-link button-arrow" target="_blank">Gå til booking</a>
+						
 					</div>
 				</div>
 			</div>
