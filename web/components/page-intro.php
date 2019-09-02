@@ -1,7 +1,8 @@
 <div class="section py-0 overflow-hidden" style="padding: 0;">
     <div class="flex flex-wrap">      
       <div class="w-full lg:flex-1 relative mob-order-2">
-        <div class="py-8 p-2 lg:px-24 text-center mx-auto relative lg:center-y">
+        <!-- Velg mellom lg:center-y og lg:intro-space (Valg for lg:intro-space kan hete noe sånt som "Skru på ved lang tekst i intro") -->
+        <div class="py-8 p-2 lg:px-24 text-center mx-auto relative page-intro lg:center-y">
         <div class="heading-sm text-eple js-load-stagger"><?php echo $subtitle ?></div>
         <hr class="hr-small mt-3 js-load-stagger">
         <h1 class="heading-xl mb-8 js-load-stagger">

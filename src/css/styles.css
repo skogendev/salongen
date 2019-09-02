@@ -1308,6 +1308,13 @@ figcaption > .text-eple.font-serif {
   }
 }
 
+@media all and (max-height: 1000px) {
+  .mob-max-h-50vh {
+    max-height: 9999vh;
+    min-height: 100vh;
+  }
+}
+
 
 
 .intro-img {
@@ -1342,6 +1349,27 @@ figcaption > .text-eple.font-serif {
   }
 }
 
+@responsive {
+  .intro-space {
+    padding-top: 10rem;
+  }
+}
+
+
+  @media all and (max-height: 800px) {
+    .page-intro.lg\:center-y {
+      position: relative !important;
+      top: 0;
+      transform: none;
+      padding-top: 10rem;
+
+    }
+  }
+
+
+
+
+
 .u-trunc {
   width: 17ch;
  
@@ -1356,3 +1384,4 @@ figcaption > .text-eple.font-serif {
   outline: 0;
   border-color: var(--color-eple);
 }
+

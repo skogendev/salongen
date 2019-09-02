@@ -9827,6 +9827,13 @@ figcaption > .text-eple.font-serif {
     }
 }
 
+@media all and (max-height: 1000px) {
+  .mob-max-h-50vh {
+    max-height: 9999vh;
+    min-height: 100vh;
+  }
+}
+
 .intro-img img,
   .intro-img video {
     height: 100%;
@@ -9859,6 +9866,19 @@ figcaption > .text-eple.font-serif {
 .center-y {
   top: 50%;
   transform: translateY(-50%);
+}
+
+.intro-space {
+  padding-top: 10rem;
+}
+
+@media all and (max-height: 800px) {
+  .page-intro.lg\:center-y {
+    position: relative !important;
+    top: 0;
+    transform: none;
+    padding-top: 10rem;
+  }
 }
 
 .u-trunc {
@@ -15629,6 +15649,10 @@ figcaption > .text-eple.font-serif {
     top: 50%;
     transform: translateY(-50%);
   }
+
+  .sm\:intro-space {
+    padding-top: 10rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -21385,6 +21409,10 @@ figcaption > .text-eple.font-serif {
   .md\:center-y {
     top: 50%;
     transform: translateY(-50%);
+  }
+
+  .md\:intro-space {
+    padding-top: 10rem;
   }
 }
 
@@ -27143,6 +27171,10 @@ figcaption > .text-eple.font-serif {
     top: 50%;
     transform: translateY(-50%);
   }
+
+  .lg\:intro-space {
+    padding-top: 10rem;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -32899,5 +32931,9 @@ figcaption > .text-eple.font-serif {
   .xl\:center-y {
     top: 50%;
     transform: translateY(-50%);
+  }
+
+  .xl\:intro-space {
+    padding-top: 10rem;
   }
 }
