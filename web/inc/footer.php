@@ -64,3 +64,14 @@
 </div>
 </div>
 <script type="text/javascript" src="/assets/js/bundle.js?v=<?php echo time() ?>"></script>
+
+<div class="ie-alert">
+
+	<img src="/assets/img/logoie11.gif" class="mb-12">
+	<p>Denne siden støtter ikke Internet Explorer da Microsoft ikke lenger oppdaterer og støtter browseren. <a href="https://fortune.com/2019/02/08/download-internet-explorer-11-end-of-life-microsoft-edge/">Les mer om hvorfor her.</a> </p>
+
+	<p>Nettsiden fungerer derimot utmerket i alle moderne nettlesere, som <a href="https://www.google.com/chrome/">Chrome</a>, <a href="https://safari.en.softonic.com/">Safari</a>, <a href="https://microsoft-edge.en.softonic.com/">Edge</a> og <a href="https://www.mozilla.org/nb-NO/firefox/new/?redirect_source=firefox-com">Firefox</a>. Klikk på en av linkene for å laste ned den du ønsker. Nettsiden fungerer også fint på alle smarttelefoner, så dersom du ikke ønsker eller har rettighet til å laste ned ny browser anbefaler vi at du besøker salongenkonferanse.no på mobilen i stedet.</p>
+
+	<p>Eventuelt kan du ringe oss på tel: 40 41 91 91 eller sende e-post til: <a href="mailto:post@salongenkonferanse.no">post@salongenkonferanse.no</a></p>
+
+</div>
