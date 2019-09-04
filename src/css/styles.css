@@ -134,9 +134,11 @@ html {
 
 html,
 body {
-  position: relative;
-  width: 100vw;
-  overflow-x: hidden;
+  @media all and (max-width: 700px) {
+    position: relative;
+    width: 100vw;
+    overflow-x: hidden;
+  }
 }
 
 body {

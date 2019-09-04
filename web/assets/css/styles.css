@@ -8368,12 +8368,15 @@ html {
   box-sizing: inherit;
 }
 
+@media all and (max-width: 700px) {
+
 html,
 body {
-  position: relative;
-  width: 100vw;
-  overflow-x: hidden;
+    position: relative;
+    width: 100vw;
+    overflow-x: hidden;
 }
+  }
 
 body {
   background: var(--bg-color);
