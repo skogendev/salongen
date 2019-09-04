@@ -20,9 +20,12 @@
 .swiper-slide {
   width: 85vw !important;
   @screen lg {
-    width: 33% !important;
+    width: 40% !important;
   }
   @screen xl {
+    width: 33% !important;
+  }
+  @media all and (min-width: 1800px) {
     width: 22.5% !important;
   }
 }

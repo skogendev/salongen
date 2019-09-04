@@ -125,28 +125,40 @@ function init(){
     switch(day[1]) {
       case 'Januar':
         var month = '01';
+        break;
       case 'Februar':
         var month = '02';
+        break;
       case 'Mars':
           var month = '03';
+          break;
       case 'April':
         var month = '04';  
+        break;
       case 'Mai':
           var month = '05';
+          break;
       case 'Juni':
         var month = '06';  
+        break;
       case 'Juli':
         var month = '07';
+        break;
       case 'August':
         var month = '08';
+        break;
       case 'September':
           var month = '09';
+          break;
       case 'Oktober':
         var month = '10';  
+        break;
       case 'November':
           var month = '11';
+          break;
       case 'Desember':
         var month = '12';              
+        break;
     }
     var day = parseInt(day[0]);
     var d = new Date();
@@ -374,16 +386,23 @@ function init(){
 
     var returnArray = {};
     for (var i = 0; i < formArray.length; i++){
-      returnArray[formArray[i]['name']] = formArray[i]['value'];
+      if (formArray[i]['name'].length > 2) {
+        returnArray[formArray[i]['name']] = formArray[i]['value'];
+      }
+      
     }
+    
     sendEmail(returnArray);
     return returnArray;
   }
 
-  document.querySelector('.form-send-request').addEventListener('submit',function(e){
-    e.preventDefault();
-    objectifyForm(document.querySelector('.form-send-request'));
-  });
+  if (document.querySelector('.form-send-request')) {
+    document.querySelector('.form-send-request').addEventListener('submit',function(e){
+      e.preventDefault();
+      objectifyForm(document.querySelector('.form-send-request'));
+    });
+  }
+  
 
   function steps(){
     document.querySelectorAll('.js-steps').forEach(function(el){
@@ -434,10 +453,11 @@ function init(){
       slidesPerView: 'auto',
       slidesPerGroup: 1,
       grabCursor: true,
+      spaceBetween: 100,
       navigation: {
         nextEl: '.swiper-next',
         prevEl: '.swiper-prev',
-      },
+      }
 
     });
 
@@ -785,6 +805,7 @@ var mySwiper = new Swiper ('.ticker-wrapper', {
     slidesPerView: 1,
     slidesPerGroup: 1,
     direction: 'vertical',
+    
     autoplay: {
       delay: 10000,
     },
