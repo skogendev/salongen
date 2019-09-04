@@ -74,7 +74,7 @@ function init(){
 
     }
     
-    var url = 'http://salongen.codewise.no/umbraco/api/nexudus/GetBookedRooms?date=' + date + '&from=' + timeFrom + '&to=' + timeTo;
+    var url = 'https://salongenkonferanse.no/umbraco/api/nexudus/GetBookedRooms?date=' + date + '&from=' + timeFrom + '&to=' + timeTo;
     
     document.querySelectorAll('.meeting-room').forEach(function(el){
       var href = el.href;
@@ -82,7 +82,7 @@ function init(){
     });
 
     var request = new XMLHttpRequest()
-    /* http://salongen.codewise.no/umbraco/api/nexudus/GetBookedRooms?date=20191003&from=10&to=13 */
+    /* https://salongenkonferanse.no/umbraco/api/nexudus/GetBookedRooms?date=20191003&from=10&to=13 */
     request.open('GET', url, true);
     request.onload = function() {
       // Begin accessing JSON data here
@@ -226,7 +226,7 @@ function init(){
      
     var roomId = document.querySelector('.js-calendar-hours').dataset.roomId;
     
-    var url = 'http://salongen.codewise.no/umbraco/api/nexudus/GetBookedHours?roomid=' + roomId + '&date=' + date;
+    var url = 'https://salongenkonferanse.no/umbraco/api/nexudus/GetBookedHours?roomid=' + roomId + '&date=' + date;
     
     var linkUrl = 'https://ibsen.spaces.nexudus.com/nb/bookings/calendar?resourcetypeid=' + roomId + '&date=' + year.toString() + '-' + month.toString() + '-' + day.toString() + '&view=agendaDay&showAll=true';
     
@@ -290,7 +290,7 @@ function init(){
   var calendarInline = document.querySelectorAll('.c-calendar-inline');
   if (calendarInline.length) {
     var id = calendarInline[0].dataset.roomId;
-    var url = 'http://salongen.codewise.no/umbraco/api/nexudus/GetBookedDays?roomid=' + id;
+    var url = 'https://salongenkonferanse.no/umbraco/api/nexudus/GetBookedDays?roomid=' + id;
     
 
     var request = new XMLHttpRequest()
@@ -347,7 +347,7 @@ function init(){
   function sendEmail(array) {
 
     var request = new XMLHttpRequest();
-    var url = 'http://salongen.codewise.no/umbraco/api/conference/sendrequest'
+    var url = 'https://salongenkonferanse.no/umbraco/api/conference/sendrequest'
     request.open('POST', url, true);
     request.setRequestHeader("Content-Type", "application/json");
     request.send(JSON.stringify(array));
