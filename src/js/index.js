@@ -76,6 +76,10 @@ function init(){
     
     var url = 'http://salongen.codewise.no/umbraco/api/nexudus/GetBookedRooms?date=' + date + '&from=' + timeFrom + '&to=' + timeTo;
     
+    document.querySelectorAll('.meeting-room').forEach(function(el){
+      var href = el.href;
+      el.href = href + '?date=' + date;
+    });
 
     var request = new XMLHttpRequest()
     /* http://salongen.codewise.no/umbraco/api/nexudus/GetBookedRooms?date=20191003&from=10&to=13 */
@@ -150,13 +154,64 @@ function init(){
     var date = n.toString() + month.toString() + day.toString();    
 
     checkMeetingRoom(date, timeFrom, timeTo)
-
+    
 }
+
+
 
   function getBookedHours() {
     document.querySelector('.table-book').classList.remove('first');
     document.querySelector('.table-book').classList.add('loading');
-    var date = calendar.selectedDates[0];
+    if (urlParams.has('date')) {
+      var date = urlParams.get('date');
+      var year = date.substring(0,3);
+      var month = date.substring(4,6);
+      var day = date.substring(6,8);
+      switch(month) {
+        case '01':
+          var monthName = 'Januar';
+          break;
+
+        case '02':
+          var monthName = 'Februar';
+          break;
+        case '03':
+          var monthName = 'Mars';
+          break;
+        case '04':
+          var monthName = 'April';  
+          break;
+        case '05':
+          var monthName = 'Mai';
+          break;
+        case '06':
+          var monthName = 'Juni';  
+          break;
+        case '07':
+          var monthName = 'Juli';
+          break;
+        case '08':
+          var monthName = 'August';
+          break;
+        case '09':
+          var monthName = 'September';
+          break;
+        case '10':
+          var monthName = 'Oktober'; 
+          break;
+        case '11':
+          var monthName = 'November';
+          break;
+        case '12':
+          var monthName = 'Desember';              
+          break;
+      }
+
+      document.querySelector('.js-calendar-hours').value = day + '. ' + monthName;
+
+    } else {
+      console.log('here')
+      var date = calendar.selectedDates[0];
       var year = date.getFullYear();
       var month = date.getMonth() + 1;
       if (month < 10) { 
@@ -166,44 +221,46 @@ function init(){
       if (day < 10) { 
         var day = '0' + day;
       }
-      var date = year.toString() + month.toString() + day.toString();    
+      var date = year.toString() + month.toString() + day.toString();   
+    }
+     
+    var roomId = document.querySelector('.js-calendar-hours').dataset.roomId;
+    
+    var url = 'http://salongen.codewise.no/umbraco/api/nexudus/GetBookedHours?roomid=' + roomId + '&date=' + date;
+    
+    var linkUrl = 'https://ibsen.spaces.nexudus.com/nb/bookings/calendar?resourcetypeid=' + roomId + '&date=' + year.toString() + '-' + month.toString() + '-' + day.toString() + '&view=agendaDay&showAll=true';
+    
+    
+    document.querySelector('.js-book-room-link ').href = linkUrl;
+
+    var request = new XMLHttpRequest()
+    request.open('GET', url, true);
+    request.onload = function() {
       
-      var roomId = document.querySelector('.js-calendar-hours').dataset.roomId;
+      var data = JSON.parse(this.response)
+
+      document.querySelectorAll('.meeting-room-hour').forEach(function(el) {
+        el.disabled = false;
+      });
+
       
-      var url = 'http://salongen.codewise.no/umbraco/api/nexudus/GetBookedHours?roomid=' + roomId + '&date=' + date;
+
       
-      var linkUrl = 'https://ibsen.spaces.nexudus.com/nb/bookings/calendar?resourcetypeid=' + roomId + '&date=' + year.toString() + '-' + month.toString() + '-' + day.toString() + '&view=agendaDay&showAll=true';
-      
-      document.querySelector('.js-book-room-link ').href = linkUrl;
-
-      var request = new XMLHttpRequest()
-      request.open('GET', url, true);
-      request.onload = function() {
-        
-        var data = JSON.parse(this.response)
-
-        document.querySelectorAll('.meeting-room-hour').forEach(function(el) {
-          el.disabled = false;
-        });
-
-        
-
-        
-        if (request.status >= 200 && request.status < 400) {
-          document.querySelector('.table-book').classList.remove('loading');
-          if (data.length) {
-            data.forEach(function(hour){
-              document.getElementById('hour' + hour).disabled = true;
-            });
-          }
-          
-
-        } else {
-          console.log('error')
+      if (request.status >= 200 && request.status < 400) {
+        document.querySelector('.table-book').classList.remove('loading');
+        if (data.length) {
+          data.forEach(function(hour){
+            document.getElementById('hour' + hour).disabled = true;
+          });
         }
-      }
+        
 
-      request.send()
+      } else {
+        console.log('error')
+      }
+    }
+
+    request.send()
   }
 
   var $meetingHourButton = document.getElementById('button-meeting-hours');
@@ -220,6 +277,10 @@ function init(){
       e.preventDefault();
       getBookedHours();
     });
+  }
+
+  if (urlParams.has('date')) {
+    getBookedHours();
   }
   
   
@@ -282,11 +343,52 @@ function init(){
   });
 
   // Steps
+
+  function sendEmail(array) {
+
+    var request = new XMLHttpRequest();
+    var url = 'http://salongen.codewise.no/umbraco/api/conference/sendrequest'
+    request.open('POST', url, true);
+    request.setRequestHeader("Content-Type", "application/json");
+    request.send(JSON.stringify(array));
+    request.onreadystatechange = function() {
+      if (request.readyState == 4 && request.status == 200) {
+          console.log(request.responseText);
+      }
+    };
+
+    if (document.querySelector('.js-steps')) {
+      var width = document.querySelector('.js-steps').offsetWidth;
+      var $stepWrapper = document.querySelector('.js-steps__inner');
+      $stepWrapper.setAttribute('style','transform:translateX(' + -(width * 2) + 'px)');
+      var $steps = document.querySelectorAll('.js-step');
+      $steps.forEach(function(el){
+        el.classList.remove('hidden');
+      });
+    }
+      
+  }
+
+  //sendEmail();
+  function objectifyForm(formArray) {
+
+    var returnArray = {};
+    for (var i = 0; i < formArray.length; i++){
+      returnArray[formArray[i]['name']] = formArray[i]['value'];
+    }
+    sendEmail(returnArray);
+    return returnArray;
+  }
+
+  document.querySelector('.form-send-request').addEventListener('submit',function(e){
+    e.preventDefault();
+    objectifyForm(document.querySelector('.form-send-request'));
+  });
+
   function steps(){
     document.querySelectorAll('.js-steps').forEach(function(el){
       var $stepWrapper = el.querySelector('.js-steps__inner');
       var $steps = el.querySelectorAll('.js-step');
-      var stepNumber = $steps.length;
       var thisWidth = el.offsetWidth;
       var stepToScroll = 0;
 
@@ -306,7 +408,7 @@ function init(){
           $steps[stepToScroll].classList.remove('hidden');
           if (stepToScroll == 1) {
             setTimeout(function(){
-              document.querySelector('.form').querySelector('input').focus();
+              document.querySelector('.form').querySelector('input[name=Company]').focus();
             }, 500);
           }
           $stepWrapper.setAttribute('style','transform:translateX(' + -(thisWidth * stepToScroll) + 'px)');   
@@ -745,7 +847,7 @@ setCorrectingInterval(function(){
 
 
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+/*document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
       e.preventDefault();
 
@@ -753,7 +855,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
           behavior: 'smooth'
       });
   });
-});
+});*/
 
 
 

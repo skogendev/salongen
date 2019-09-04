@@ -9,7 +9,7 @@
             <p>Salongen er et personlig og inspirerende konferansehus med et stort hjerte for å skreddersy arrangementer av høy kvalitet. Salongen har møterom og fasiliteter som passer fint for både små møter og større arrangementer. </p>
         </div>
       </div>
-      <ul class="u-flexgrid-g list-none p-0">
+      <ul class="u-flexgrid-g list-none p-0 justify-center">
         <li class="col-12 md:col-6 xl:col-4">
           <div class="border-primary">
             <div class="relative">
