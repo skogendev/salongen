@@ -72,7 +72,7 @@
 
         </div>
       </div>
-      <div class="w-full lg:flex-1 mob-order-1 mob-max-h-50vh">
+      <div class="w-full lg:flex-1 mob-order-1 mob-max-h-50vh intro-img">
         <img data-src="/assets/img/tmp24.jpg" class="inview lazyload-img lazyload">
       </div>
     </div>
