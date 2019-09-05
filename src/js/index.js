@@ -78,7 +78,10 @@ function init(){
     
     document.querySelectorAll('.meeting-room').forEach(function(el){
       var href = el.href;
-      el.href = href + '?date=' + date;
+      if (el.querySelector('.heading-md').innerHTML != 'Kristiania') {
+        el.href = href + '?date=' + date;
+      }
+      
     });
 
     var request = new XMLHttpRequest()
@@ -302,6 +305,9 @@ function init(){
   var calendarInline = document.querySelectorAll('.c-calendar-inline');
   if (calendarInline.length) {
     var id = calendarInline[0].dataset.roomId;
+    if (id.length < 3) {
+      var id = 967277326;
+    }
     var url = 'https://salongenkonferanse.no/umbraco/api/nexudus/GetBookedDays?roomid=' + id;
     
 

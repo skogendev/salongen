@@ -1360,7 +1360,7 @@ figcaption > .text-eple.font-serif {
     position: absolute;
   }
   @screen lg {
-    min-height: 80vh;
+    min-height: 100vh;
   }
 }
 
