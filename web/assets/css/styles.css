@@ -9877,12 +9877,17 @@ figcaption > .text-eple.font-serif {
   }
 }
 
+.intro-img {
+  position: relative;
+}
+
 .intro-img img,
   .intro-img video {
     height: 100%;
     width: 100%;
     -o-object-fit: cover;
        object-fit: cover;
+    position: absolute;
   }
 
 @media (min-width: 992px) {
