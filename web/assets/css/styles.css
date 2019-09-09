@@ -9942,6 +9942,17 @@ figcaption > .text-eple.font-serif {
   border-color: var(--color-eple);
 }
 
+#footer-logo {
+  height: 0;
+  left: -1.5rem;
+  padding-bottom: 100%;
+  position: relative;
+}
+
+#footer-logo svg {
+    position: absolute;
+  }
+
 @media (min-width: 576px) {
   .u-flexgrid-g > .sm\:col-1 {
     flex-basis: calc((100%/12) * 1);

@@ -1419,3 +1419,12 @@ figcaption > .text-eple.font-serif {
   border-color: var(--color-eple);
 }
 
+#footer-logo {
+  height: 0;
+  left: -1.5rem;
+  padding-bottom: 100%;
+  position: relative;
+  & svg {
+    position: absolute;
+  }
+}

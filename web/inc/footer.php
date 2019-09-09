@@ -3,7 +3,7 @@
   <div class="container">
     <div class="u-flexgrid-g">
       <div class="col-6 lg:col-2 order">
-        <img src="/assets/svg/logo-med-runding.svg" class="w-2/3">
+        <div id="footer-logo"></div>
       </div>
       <div class="col-6 lg:col-3 order">
         <ul class="list-none p-0 heading-sm no-underline">

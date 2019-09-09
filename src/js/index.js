@@ -8,6 +8,7 @@ import Barba from '@barba/core';
 import barbaCss from '@barba/css';
 import inView from 'in-view';
 import Headroom from 'headroom.js';
+import bodymovin from 'lottie-web';
 
 
 // Document ready
@@ -886,3 +887,12 @@ setCorrectingInterval(function(){
 
 
 
+
+// Footer anim
+var animation = bodymovin.loadAnimation({
+  container: document.getElementById('footer-logo'),
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: '/assets/json/logo.json'
+})
