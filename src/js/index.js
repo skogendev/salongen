@@ -43,6 +43,7 @@ document.querySelector('.js-show-nav').addEventListener('click',function(){
 function init(){
 
   
+  
   // Footer anim
   var animation = bodymovin.loadAnimation({
     container: document.getElementById('footer-logo'),
@@ -791,9 +792,15 @@ Barba.init({
       // then return a promise or use `this.async()`
       setTimeout(function(){
         document.body.classList.add('js-transition-ready');
+        
       }, 50);
+      // Video
+  
     },
     afterEnter({ }) {
+      document.querySelectorAll('video').forEach(function(el){
+        el.play();
+      });
       init();
       document.body.classList.add('js-transition-ready');
     }
