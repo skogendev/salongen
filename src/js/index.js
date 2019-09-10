@@ -43,6 +43,14 @@ document.querySelector('.js-show-nav').addEventListener('click',function(){
 function init(){
 
   
+  // Footer anim
+  var animation = bodymovin.loadAnimation({
+    container: document.getElementById('footer-logo'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: '/assets/json/logo.json'
+  })
   
   var calendarOpen = document.querySelectorAll('.c-calendar');
   var calendar = flatpickr(calendarOpen, {
@@ -180,7 +188,7 @@ function init(){
     document.querySelector('.table-book').classList.add('loading');
     if (urlParams.has('date')) {
       var date = urlParams.get('date');
-      var year = date.substring(0,3);
+      var year = date.substring(0,4);
       var month = date.substring(4,6);
       var day = date.substring(6,8);
       switch(month) {
@@ -887,12 +895,3 @@ setCorrectingInterval(function(){
 
 
 
-
-// Footer anim
-var animation = bodymovin.loadAnimation({
-  container: document.getElementById('footer-logo'),
-  renderer: 'svg',
-  loop: true,
-  autoplay: true,
-  path: '/assets/json/logo.json'
-})
