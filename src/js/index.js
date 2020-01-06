@@ -235,18 +235,58 @@ function init(){
       document.querySelector('.js-calendar-hours').value = day + '. ' + monthName;
 
     } else {
-      console.log('here')
-      var date = calendar.selectedDates[0];
+      var date = new Date();
       var year = date.getFullYear();
       var month = date.getMonth() + 1;
       if (month < 10) { 
         var month = '0' + month;
+      }
+      switch(month) {
+        case '01':
+          var monthName = 'Januar';
+          break;
+
+        case '02':
+          var monthName = 'Februar';
+          break;
+        case '03':
+          var monthName = 'Mars';
+          break;
+        case '04':
+          var monthName = 'April';  
+          break;
+        case '05':
+          var monthName = 'Mai';
+          break;
+        case '06':
+          var monthName = 'Juni';  
+          break;
+        case '07':
+          var monthName = 'Juli';
+          break;
+        case '08':
+          var monthName = 'August';
+          break;
+        case '09':
+          var monthName = 'September';
+          break;
+        case '10':
+          var monthName = 'Oktober'; 
+          break;
+        case '11':
+          var monthName = 'November';
+          break;
+        case '12':
+          var monthName = 'Desember';              
+          break;
       }
       var day = date.getDate();
       if (day < 10) { 
         var day = '0' + day;
       }
       var date = year.toString() + month.toString() + day.toString();   
+      document.querySelector('.js-calendar-hours').value = day + '. ' + monthName;
+
     }
      
     var roomId = document.querySelector('.js-calendar-hours').dataset.roomId;
@@ -305,6 +345,8 @@ function init(){
   }
 
   if (urlParams.has('date')) {
+    getBookedHours();
+  } else if (document.getElementById('meeting-rooms-availability')) {
     getBookedHours();
   }
   

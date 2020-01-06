@@ -12,9 +12,10 @@
           <div class="blockquote">
             <p>Salongen er et personlig og inspirerende konferansehus med et stort hjerte for å skreddersy arrangementer av høy kvalitet. Salongen har møterom og fasiliteter som passer fint for både små møter og større arrangementer. </p>
           </div>
-          <div class="heading-sm no-underline text-eple mt-8">
+
+          <a href="/moterom.php" class="button mt-4"><span>Book rommet</span></a>
+          <div class="heading-sm no-underline text-eple mt-6">
             <a href="#" class="block mb-2 icon icon-arrow-left">Se alle møterom</a>
-            <a href="#meeting-rooms-availability" class="block icon icon-arrow-down">Se tilgjengelighet</a>
           </div>
         </div>
         <div class="overflow-hidden"><img src="/assets/img/tmp16.jpg" class="lazyload lazyload-img"></div>

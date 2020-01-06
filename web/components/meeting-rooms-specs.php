@@ -28,11 +28,14 @@
 				</table>
 			</div>
 			<div class="col-12 lg:col-5 wysiwyg">
-				<h2 class="heading-lg">Se tilgjengelighet</h2>
+				<h2 class="heading-lg">Se tilgjengelighet — Lunden</h2>
 				<div class="flex ">
 					<input class="c-calendar button-normal js-calendar-hours flex-1 mr-4 pr-0 lg:pr-2" type="text" placeholder="Velg en dato" value="" readonly="readonly" data-room-id="967277326">
-					<a href="https://ibsen.spaces.nexudus.com/nb/bookings/calendar?resourcetypeid=967277326&date=2019-08-22&view=agendaDay&showAll=true" class="js-book-room-link button-arrow " target="_blank"><span class="hidden lg:inline">Gå til </span>book<span class="hidden lg:inline">ing</span></a>
-</div>
+					<a href="https://ibsen.spaces.nexudus.com/nb/bookings/calendar?resourcetypeid=967277326&date=2019-08-22&view=agendaDay&showAll=true" class="js-book-room-link button-arrow button-eple " target="_blank"><span class="hidden lg:inline">Gå til </span>book<span class="hidden lg:inline">ing</span></a>
+</div>	
+					<div class="text-sm text-eple mt-4 ">
+						<p>Hvis ønsket tidspunkt er ledig, gå videre ved å klikke på "Book møterom".</p>
+					</div>
 				<!--<button class="button-normal" id="button-meeting-hours">Sjekk</button>-->
 				<div class="table-book-border">
 					<table class="table-book first">
@@ -94,14 +97,7 @@
 						</tbody>
 					</table>
 				</div>
-				<div class="flex mt-4">
-					<div class="w-1/2 text-xs text-eple">
-						<p>Velg ledige tidspunkt, og gå videre ved å trykke på book.</p>
-					</div>
-					<div class="w-1/2 text-right">
-						
-					</div>
-				</div>
+				
 			</div>
 		</div>
 	</div>

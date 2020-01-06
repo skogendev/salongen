@@ -19,8 +19,10 @@
           <?php } ?>
 
           <?php if(isset($subtitle) && $subtitle == 'Møterom'){ ?>
-
-          <div class="mt-8 js-load-stagger">
+            <div class="js-load-stagger mt-8">
+              <a href="#" class="button">Book møterom</a>
+            </div>
+          <!--<div class="mt-8 js-load-stagger">
             <div class="heading-sm text-center">Velg ønsket tidspunkt</div>
 
             <form class="form-meeting-rooms mt-4 mx-auto relative">
@@ -67,6 +69,7 @@
               </div>
             </form>
           </div>
+          -->
           <?php } ?>
           
 
