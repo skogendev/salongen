@@ -235,7 +235,12 @@ function init(){
       document.querySelector('.js-calendar-hours').value = day + '. ' + monthName;
 
     } else {
-      var date = new Date();
+      if (calendar.selectedDates[0]) {
+        var date = calendar.selectedDates[0];
+      } else {
+        var date = new Date();
+      }
+      
       var year = date.getFullYear();
       var month = date.getMonth() + 1;
       if (month < 10) { 
