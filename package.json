@@ -34,7 +34,7 @@
     "gulp-watch": "latest",
     "headroom.js": "^0.9.4",
     "in-view": "^0.6.1",
-    "lazysizes": "^5.0.0",
+    "lazysizes": "^5.2.1",
     "lottie-web": "^5.5.8",
     "normalize.css": "^8.0.1",
     "postcss-easy-import": "^3.0.0",
