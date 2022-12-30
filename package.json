@@ -43,9 +43,9 @@
     "scroll-out": "^2.2.7",
     "swiper": "^4.5.0",
     "tailwindcss": "0.7.4",
-    "webpack": "^4.27.1",
-    "webpack-cli": "^3.1.2",
-    "webpack-stream": "^5.2.1"
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-stream": "^7.0.0"
   },
   "dependencies": {},
   "paths": {
